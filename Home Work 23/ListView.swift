@@ -13,11 +13,21 @@ struct ListView: View {
     
     @Binding var titles: [(String, String)]
     
+    @State private var isSelected: Bool = false
+    
     var body: some View {
         
         List {
             ForEach(titles, id: \.0) { item in
                 HStack {
+                    if isSelected {
+                        Image(systemName: "checkmark.circle.fill")
+                            .foregroundColor(.red)
+                    } else {
+                        Circle()
+                            .stroke(Color.red, lineWidth: 2)
+                            .frame(width: 20, height: 20)
+                    }
                     Image(systemName: item.1)
                         .foregroundColor(.red)
                     Text(item.0)
@@ -28,6 +38,10 @@ struct ListView: View {
             .onDelete(perform: onDelete)
             .onMove(perform: onMove)
             .background(Color.clear)
+            .onTapGesture {
+                isSelected.toggle()
+            }
+         
         }
         
         .listStyle(.inset)
