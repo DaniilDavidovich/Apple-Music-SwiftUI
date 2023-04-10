@@ -29,6 +29,7 @@ struct TabViewGroup: View {
                     Image(systemName: "magnifyingglass")
                 }
         }
+        .accentColor(.red)
     }
 }
 

@@ -9,15 +9,31 @@ import SwiftUI
 
 struct MediaLibrary: View {
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+        
+        var flag = false
+        
+        NavigationView {
+            VStack {
+            }
+            
+            .navigationBarTitle("Media Library")
+            
+            .navigationBarItems(
+                trailing: Button("Edit", action: {
+                    if flag {
+                        
+                    } else {
+                        
+                    }
+                })
+                .foregroundColor(.red)
+            )
         }
-        .padding()
     }
 }
+
+
+
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
