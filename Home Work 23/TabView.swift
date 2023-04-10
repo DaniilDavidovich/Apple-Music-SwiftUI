@@ -17,7 +17,7 @@ struct TabViewGroup: View {
                 Image(systemName: "music.note.list")
             }
             
-            Text("Radio")
+            ListView()
                 .tabItem {
                     Text("Radio")
                     Image(systemName: "dot.radiowaves.left.and.right")

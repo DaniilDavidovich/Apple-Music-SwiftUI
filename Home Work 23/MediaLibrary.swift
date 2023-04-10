@@ -14,6 +14,7 @@ struct MediaLibrary: View {
         
         NavigationView {
             VStack {
+                DesscriptionMediaLibrary()
             }
             
             .navigationBarTitle("Media Library")

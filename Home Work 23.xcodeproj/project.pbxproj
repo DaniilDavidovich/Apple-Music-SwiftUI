@@ -13,6 +13,7 @@
 		A55E513129E45A1D004D275E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A55E513029E45A1D004D275E /* Preview Assets.xcassets */; };
 		A55E513829E45A7F004D275E /* TabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A55E513729E45A7F004D275E /* TabView.swift */; };
 		A55E513A29E46649004D275E /* Desscription Media Library.swift in Sources */ = {isa = PBXBuildFile; fileRef = A55E513929E46649004D275E /* Desscription Media Library.swift */; };
+		A55E513E29E46A96004D275E /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A55E513D29E46A96004D275E /* ListView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +24,7 @@
 		A55E513029E45A1D004D275E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		A55E513729E45A7F004D275E /* TabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabView.swift; sourceTree = "<group>"; };
 		A55E513929E46649004D275E /* Desscription Media Library.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Desscription Media Library.swift"; sourceTree = "<group>"; };
+		A55E513D29E46A96004D275E /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +60,7 @@
 				A55E512929E45A1B004D275E /* Home_Work_23App.swift */,
 				A55E512B29E45A1B004D275E /* MediaLibrary.swift */,
 				A55E513929E46649004D275E /* Desscription Media Library.swift */,
+				A55E513D29E46A96004D275E /* ListView.swift */,
 				A55E513729E45A7F004D275E /* TabView.swift */,
 				A55E512D29E45A1D004D275E /* Assets.xcassets */,
 				A55E512F29E45A1D004D275E /* Preview Content */,
@@ -145,6 +148,7 @@
 			files = (
 				A55E512C29E45A1B004D275E /* MediaLibrary.swift in Sources */,
 				A55E513829E45A7F004D275E /* TabView.swift in Sources */,
+				A55E513E29E46A96004D275E /* ListView.swift in Sources */,
 				A55E513A29E46649004D275E /* Desscription Media Library.swift in Sources */,
 				A55E512A29E45A1B004D275E /* Home_Work_23App.swift in Sources */,
 			);
