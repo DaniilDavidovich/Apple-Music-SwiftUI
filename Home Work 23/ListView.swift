@@ -10,41 +10,35 @@ import SwiftUI
 
 
 struct ListView: View {
-    @State private var titles = ["Playlists", "Artists", "Alboms", "Songs", "Films", "Videoclips", "Genres", "Collections", "Autors"]
-    @State private var editMode = EditMode.inactive
+    
+    @Binding var titles: [(String, String)]
     
     var body: some View {
-        NavigationView {
-            List {
-                ForEach(titles, id: \.self) { item in
-                    Text(item)
+        
+        List {
+            ForEach(titles, id: \.0) { item in
+                HStack {
+                    Image(systemName: item.1)
+                        .foregroundColor(.red)
+                    Text(item.0)
                         .bold()
-                        .onDrag {
-                            NSItemProvider(object: NSString(string: item))
-                        }
+                   
                 }
-                .onDelete(perform: onDelete)
-                .onMove(perform: onMove)
-                
             }
-            .navigationBarItems(trailing: EditButton())
-            .environment(\.editMode, $editMode)
+            .onDelete(perform: onDelete)
+            .onMove(perform: onMove)
+            .background(Color.clear)
         }
+        
+        .listStyle(.inset)
+        .background(Color.clear)
     }
-
+    
     func onDelete(at offsets: IndexSet) {
         titles.remove(atOffsets: offsets)
     }
     
     func onMove(source: IndexSet, destination: Int) {
-            titles.move(fromOffsets: source, toOffset: destination)
-    }
-}
-
-
-
-struct ListView_Previews: PreviewProvider {
-    static var previews: some View {
-        ListView()
+        titles.move(fromOffsets: source, toOffset: destination)
     }
 }

@@ -58,10 +58,10 @@
 			isa = PBXGroup;
 			children = (
 				A55E512929E45A1B004D275E /* Home_Work_23App.swift */,
-				A55E512B29E45A1B004D275E /* MediaLibrary.swift */,
-				A55E513929E46649004D275E /* Desscription Media Library.swift */,
-				A55E513D29E46A96004D275E /* ListView.swift */,
 				A55E513729E45A7F004D275E /* TabView.swift */,
+				A55E512B29E45A1B004D275E /* MediaLibrary.swift */,
+				A55E513D29E46A96004D275E /* ListView.swift */,
+				A55E513929E46649004D275E /* Desscription Media Library.swift */,
 				A55E512D29E45A1D004D275E /* Assets.xcassets */,
 				A55E512F29E45A1D004D275E /* Preview Content */,
 			);
