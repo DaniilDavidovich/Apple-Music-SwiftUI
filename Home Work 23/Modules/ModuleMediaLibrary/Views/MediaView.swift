@@ -9,10 +9,7 @@ import SwiftUI
 
 struct MediaView: View {
     
-    @State private var titles = [("Playlists","heart"), ("Artists", "heart"), ("Alboms", "heart"), ("Songs", "heart"), ("Films", "heart"), ("Videoclips", "heart"), ("Genres", "heart"), ("Collections", "heart"), ("Autors", "heart")]
-    
     @State private var isEditing = false
-    
     
     var body: some View {
         
@@ -21,7 +18,7 @@ struct MediaView: View {
             VStack {
                 
                 if isEditing {
-                    MediaList(titles: $titles)
+                    MediaList()
                         .padding()
                         
                 } else {

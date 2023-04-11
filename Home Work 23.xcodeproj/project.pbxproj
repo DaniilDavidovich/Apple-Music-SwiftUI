@@ -17,6 +17,7 @@
 		A594AC4829E5AF8700BF87FE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A594AC4729E5AF8700BF87FE /* ContentView.swift */; };
 		A594AC4A29E5B25500BF87FE /* MediaRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = A594AC4929E5B25500BF87FE /* MediaRow.swift */; };
 		A594AC4C29E5B27E00BF87FE /* MediaModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A594AC4B29E5B27E00BF87FE /* MediaModel.swift */; };
+		A594AC5229E5D3E600BF87FE /* EditMore +Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = A594AC5129E5D3E600BF87FE /* EditMore +Ext.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,7 @@
 		A594AC4729E5AF8700BF87FE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		A594AC4929E5B25500BF87FE /* MediaRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaRow.swift; sourceTree = "<group>"; };
 		A594AC4B29E5B27E00BF87FE /* MediaModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaModel.swift; sourceTree = "<group>"; };
+		A594AC5129E5D3E600BF87FE /* EditMore +Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EditMore +Ext.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +66,7 @@
 			isa = PBXGroup;
 			children = (
 				A594AC4E29E5B2CC00BF87FE /* App */,
+				A594AC5029E5D35000BF87FE /* Extensions */,
 				A594AC4629E5AF3C00BF87FE /* TabBarView */,
 				A594AC4229E5AD6C00BF87FE /* Modules */,
 				A55E512D29E45A1D004D275E /* Assets.xcassets */,
@@ -149,6 +152,14 @@
 			path = ModuleSearch;
 			sourceTree = "<group>";
 		};
+		A594AC5029E5D35000BF87FE /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				A594AC5129E5D3E600BF87FE /* EditMore +Ext.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -220,6 +231,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A55E512C29E45A1B004D275E /* MediaView.swift in Sources */,
+				A594AC5229E5D3E600BF87FE /* EditMore +Ext.swift in Sources */,
 				A55E513829E45A7F004D275E /* TabViewAppleMusic.swift in Sources */,
 				A594AC4829E5AF8700BF87FE /* ContentView.swift in Sources */,
 				A55E513E29E46A96004D275E /* MediaList.swift in Sources */,
