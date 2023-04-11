@@ -7,23 +7,28 @@
 
 import SwiftUI
 
-struct DesscriptionMediaLibrary: View {
+struct MediaTitle: View {
     var body: some View {
         VStack {
             
-            Text("Looking for your music?")
+            Text(Texts.title)
                 .font(.title)
                 .bold()
             
-            Text("The music you bought in the Itunes Store will appear here.")
+            Text(Texts.description)
                 .multilineTextAlignment(.center)
                 .padding(1)
         }
     }
 }
 
-struct DesscriptionMediaLibrary_Previews: PreviewProvider {
+struct MediaTitle_Previews: PreviewProvider {
     static var previews: some View {
-        DesscriptionMediaLibrary()
+        MediaTitle()
     }
+}
+
+fileprivate enum Texts {
+    static let title = "Looking for your music?"
+    static let description = "The music you bought in the Itunes Store will appear here."
 }

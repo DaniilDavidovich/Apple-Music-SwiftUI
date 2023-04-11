@@ -9,7 +9,7 @@ import SwiftUI
 
 
 
-struct ListView: View {
+struct MediaList: View {
     
     @Binding var titles: [(String, String)]
     

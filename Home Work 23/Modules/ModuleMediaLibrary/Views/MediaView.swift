@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct MediaLibrary: View {
+struct MediaView: View {
     
     @State private var titles = [("Playlists","heart"), ("Artists", "heart"), ("Alboms", "heart"), ("Songs", "heart"), ("Films", "heart"), ("Videoclips", "heart"), ("Genres", "heart"), ("Collections", "heart"), ("Autors", "heart")]
     
@@ -21,11 +21,11 @@ struct MediaLibrary: View {
             VStack {
                 
                 if isEditing {
-                    ListView(titles: $titles)
+                    MediaList(titles: $titles)
                         .padding()
                         
                 } else {
-                    DesscriptionMediaLibrary()
+                    MediaTitle()
                 }
             }
             
@@ -48,8 +48,8 @@ struct MediaLibrary: View {
 
 
 
-struct ContentView_Previews: PreviewProvider {
+struct MediaView_Previews: PreviewProvider {
     static var previews: some View {
-        MediaLibrary()
+        MediaView()
     }
 }
