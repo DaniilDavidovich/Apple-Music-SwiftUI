@@ -11,35 +11,31 @@ import SwiftUI
 
 struct MediaList: View {
     
-    var model = MediaModel.getModel
-    
-//    @Binding var model: [MediaModel]
+    @State var model = MediaModel.getModel
     
     @State private var isSelected: Bool = false
-    
+       
     var body: some View {
-        
         List {
             ForEach(model, id: \.self) { item in
                 MediaRow(model: item)
             }
-//            .onDelete(perform: onDelete)
-//            .onMove(perform: onMove)
+            .onDelete(perform: onDelete)
+            .onMove(perform: onMove)
             .background(Color.clear)
-            .onTapGesture {
-                isSelected.toggle()
-            }
+            .listRowSeparator(.hidden, edges: .all)
+            .frame(height: 0, alignment: .trailing)
         }
         
         .listStyle(.inset)
         .background(Color.clear)
     }
     
-    mutating func onDelete(at offsets: IndexSet) {
+    func onDelete(at offsets: IndexSet) {
         model.remove(atOffsets: offsets)
     }
     
-    mutating func onMove(source: IndexSet, destination: Int) {
+    func onMove(source: IndexSet, destination: Int) {
         model.move(fromOffsets: source, toOffset: destination)
     }
 }
