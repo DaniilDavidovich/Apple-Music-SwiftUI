@@ -34,17 +34,3 @@ struct MediaModel: Identifiable, Hashable {
         )
     }
 }
-
-extension MediaModel {
-    static let getModel = [
-        MediaModel(icon: "music.note.list", title: "Playlists", isSelected: false),
-        MediaModel(icon: "music.mic", title: "Artists", isSelected: false),
-        MediaModel(icon: "rectangle.stack", title: "Alboms", isSelected: false),
-        MediaModel(icon: "music.note", title: "Songs", isSelected: false),
-        MediaModel(icon: "tv", title: "Films", isSelected: false),
-        MediaModel(icon: "music.note.tv", title: "Videoclips", isSelected: false),
-        MediaModel(icon: "guitars", title: "Genres", isSelected: false),
-        MediaModel(icon: "person.2.crop.square.stack", title: "Collections", isSelected: false),
-        MediaModel(icon: "music.quarternote.3", title: "Autors", isSelected: false),
-    ]
-}

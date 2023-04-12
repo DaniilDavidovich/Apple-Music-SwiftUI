@@ -9,6 +9,8 @@ import SwiftUI
 
 struct MediaView: View {
     
+    @State var editMode: EditMode = .inactive
+    
     @State private var isEditing = false
     
     var body: some View {
@@ -20,7 +22,6 @@ struct MediaView: View {
                 if isEditing {
                     MediaList()
                         .padding()
-                        
                 } else {
                     MediaTitle()
                 }
@@ -31,6 +32,7 @@ struct MediaView: View {
             .navigationBarItems(
                 trailing: Button(action: {
                     isEditing.toggle()
+                    editMode = isEditing ? .active : .inactive
                 })
                 {
                     Text(isEditing ? "Done" : "Edit")
@@ -38,6 +40,8 @@ struct MediaView: View {
                 
                 .foregroundColor(.red)
             )
+            
+            .environment(\.editMode, $editMode)
         }
     }
 }

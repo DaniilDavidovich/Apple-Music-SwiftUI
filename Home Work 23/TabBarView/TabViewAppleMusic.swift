@@ -30,6 +30,18 @@ struct TabViewAppleMusic: View {
                 }
         }
         .accentColor(.red)
+        .background()
+        .onAppear() {
+            UITabBar.appearance().backgroundColor = UIColor(
+                red: 0.972,
+                green: 0.972,
+                blue: 0.972,
+                alpha: 1
+            )
+        }
+        .safeAreaInset(edge: .bottom) {
+            PlayerView()
+        }
     }
 }
 

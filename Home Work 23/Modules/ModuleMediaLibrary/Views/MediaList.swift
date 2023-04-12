@@ -11,17 +11,24 @@ import SwiftUI
 
 struct MediaList: View {
     
-    @State var model = MediaModel.getModel
+    @State var modelViewModel = MediaViewModel()
     
     @State private var isSelected: Bool = false
        
     var body: some View {
         List {
-            ForEach(model, id: \.self) { item in
-                MediaRow(model: item)
+            ForEach(modelViewModel.mediaModelArray) { mediaModel in
+                MediaRow(model: mediaModel)
+                    .onTapGesture {
+                        withAnimation {
+                            modelViewModel.update(model: mediaModel)
+                        }
+                    }
+                
             }
-            .onDelete(perform: onDelete)
-            .onMove(perform: onMove)
+            
+//            .onDelete(perform: onDelete)
+            .onMove(perform: modelViewModel.move)
             .background(Color.clear)
             .listRowSeparator(.hidden, edges: .all)
             .frame(height: 0, alignment: .trailing)
@@ -31,11 +38,7 @@ struct MediaList: View {
         .background(Color.clear)
     }
     
-    func onDelete(at offsets: IndexSet) {
-        model.remove(atOffsets: offsets)
-    }
-    
-    func onMove(source: IndexSet, destination: Int) {
-        model.move(fromOffsets: source, toOffset: destination)
-    }
+//    func onMove(source: IndexSet, destination: Int) {
+//        model.move(fromOffsets: source, toOffset: destination)
+//    }
 }
