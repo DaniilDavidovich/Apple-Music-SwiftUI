@@ -11,7 +11,7 @@ import SwiftUI
 struct Home_Work_23App: App {
     var body: some Scene {
         WindowGroup {
-            MediaLibrary()
+            ContentView()
         }
     }
 }
