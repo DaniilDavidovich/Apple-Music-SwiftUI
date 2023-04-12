@@ -67,7 +67,7 @@ struct PlayerWindow_Previews: PreviewProvider {
 }
 
 fileprivate enum Constants {
-    static let title = "Не исполняется"
+    static let title = "Not Playing"
 }
 
 fileprivate enum Images {

@@ -72,6 +72,7 @@
 				A594AC4E29E5B2CC00BF87FE /* App */,
 				A594AC5029E5D35000BF87FE /* Extensions */,
 				A594AC4629E5AF3C00BF87FE /* TabBarView */,
+				A57E75C829E6FE4A00D2D158 /* PlayerView */,
 				A594AC4229E5AD6C00BF87FE /* Modules */,
 				A55E512D29E45A1D004D275E /* Assets.xcassets */,
 				A55E512F29E45A1D004D275E /* Preview Content */,
@@ -93,6 +94,14 @@
 				A57E75C629E6F9AF00D2D158 /* MediaViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		A57E75C829E6FE4A00D2D158 /* PlayerView */ = {
+			isa = PBXGroup;
+			children = (
+				A594AC5329E5F23700BF87FE /* PlayerView.swift */,
+			);
+			path = PlayerView;
 			sourceTree = "<group>";
 		};
 		A594AC4229E5AD6C00BF87FE /* Modules */ = {
@@ -138,7 +147,6 @@
 			isa = PBXGroup;
 			children = (
 				A55E513729E45A7F004D275E /* TabViewAppleMusic.swift */,
-				A594AC5329E5F23700BF87FE /* PlayerView.swift */,
 			);
 			path = TabBarView;
 			sourceTree = "<group>";
