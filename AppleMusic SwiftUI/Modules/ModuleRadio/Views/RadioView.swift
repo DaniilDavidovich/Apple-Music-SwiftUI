@@ -25,7 +25,7 @@ struct RadioView: View {
                     Divider()
                         .padding(.horizontal, 20)
                     
-                    Text("Stations")
+                    Text(Titles.stations)
                         .font(.title)
                         .fontWeight(.bold)
                         .padding(.leading, 20)
@@ -34,7 +34,7 @@ struct RadioView: View {
                 }
                 .padding(.bottom, 80)
             }
-            .navigationBarTitle("Radio")
+            .navigationBarTitle(Titles.radion)
         }
     }
 }
@@ -43,4 +43,9 @@ struct RadioView_Previews: PreviewProvider {
     static var previews: some View {
         RadioView()
     }
+}
+
+fileprivate enum Titles {
+    static let stations = "Stations"
+    static let radion = "Radio"
 }
