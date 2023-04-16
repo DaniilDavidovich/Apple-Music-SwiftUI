@@ -25,9 +25,6 @@ struct ShowsView: View {
                             .foregroundColor(.gray)
                             .font(.footnote)
                             .textCase(.uppercase)
-                            .padding(.top, 3)
-                        Spacer()
-                            .frame(height: 3)
                         
                         Text("Named")
                             .font(.title2)

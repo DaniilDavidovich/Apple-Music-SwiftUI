@@ -23,7 +23,7 @@ struct StationsView: View {
                     Image(model)
                         .resizable()
                         .scaledToFill()
-                        .frame(width: 100, height: 100)
+                        .frame(width: 120, height: 120)
                         .cornerRadius(5)
                     VStack {
                         Text(model)
