@@ -17,7 +17,7 @@ struct TabViewAppleMusic: View {
                 Image(systemName: Images.iconMedia)
             }
             
-            Text("Radio")
+            RadioView()
                 .tabItem {
                     Text(Constants.titleRadio)
                     Image(systemName: Images.iconRadio)

@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A55A7BD929EC935700CBBD76 /* RadioView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A55A7BD829EC935700CBBD76 /* RadioView.swift */; };
+		A55A7BDB29EC99DD00CBBD76 /* ShowsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A55A7BDA29EC99DD00CBBD76 /* ShowsView.swift */; };
+		A55A7BDE29ECA36000CBBD76 /* StationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A55A7BDD29ECA36000CBBD76 /* StationsView.swift */; };
+		A55A7BE029ECB56100CBBD76 /* RadioModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A55A7BDF29ECB56100CBBD76 /* RadioModel.swift */; };
+		A55A7BE229ECB56C00CBBD76 /* RadioVIewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A55A7BE129ECB56C00CBBD76 /* RadioVIewModel.swift */; };
 		A55E512A29E45A1B004D275E /* Home_Work_23App.swift in Sources */ = {isa = PBXBuildFile; fileRef = A55E512929E45A1B004D275E /* Home_Work_23App.swift */; };
 		A55E512C29E45A1B004D275E /* MediaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A55E512B29E45A1B004D275E /* MediaView.swift */; };
 		A55E512E29E45A1D004D275E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A55E512D29E45A1D004D275E /* Assets.xcassets */; };
@@ -23,7 +28,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		A55E512629E45A1B004D275E /* Home Work 23.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Home Work 23.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A55A7BD829EC935700CBBD76 /* RadioView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioView.swift; sourceTree = "<group>"; };
+		A55A7BDA29EC99DD00CBBD76 /* ShowsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowsView.swift; sourceTree = "<group>"; };
+		A55A7BDD29ECA36000CBBD76 /* StationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationsView.swift; sourceTree = "<group>"; };
+		A55A7BDF29ECB56100CBBD76 /* RadioModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioModel.swift; sourceTree = "<group>"; };
+		A55A7BE129ECB56C00CBBD76 /* RadioVIewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioVIewModel.swift; sourceTree = "<group>"; };
+		A55E512629E45A1B004D275E /* AppleMusic SwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "AppleMusic SwiftUI.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A55E512929E45A1B004D275E /* Home_Work_23App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home_Work_23App.swift; sourceTree = "<group>"; };
 		A55E512B29E45A1B004D275E /* MediaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaView.swift; sourceTree = "<group>"; };
 		A55E512D29E45A1D004D275E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -50,10 +60,36 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A55A7BD529EC92ED00CBBD76 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A55A7BDF29ECB56100CBBD76 /* RadioModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		A55A7BD629EC92F500CBBD76 /* View model */ = {
+			isa = PBXGroup;
+			children = (
+				A55A7BE129ECB56C00CBBD76 /* RadioVIewModel.swift */,
+			);
+			path = "View model";
+			sourceTree = "<group>";
+		};
+		A55A7BD729EC92FE00CBBD76 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A55A7BD829EC935700CBBD76 /* RadioView.swift */,
+				A55A7BDA29EC99DD00CBBD76 /* ShowsView.swift */,
+				A55A7BDD29ECA36000CBBD76 /* StationsView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		A55E511D29E45A1B004D275E = {
 			isa = PBXGroup;
 			children = (
-				A55E512829E45A1B004D275E /* Home Work 23 */,
+				A55E512829E45A1B004D275E /* AppleMusic SwiftUI */,
 				A55E512729E45A1B004D275E /* Products */,
 			);
 			sourceTree = "<group>";
@@ -61,12 +97,12 @@
 		A55E512729E45A1B004D275E /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				A55E512629E45A1B004D275E /* Home Work 23.app */,
+				A55E512629E45A1B004D275E /* AppleMusic SwiftUI.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		A55E512829E45A1B004D275E /* Home Work 23 */ = {
+		A55E512829E45A1B004D275E /* AppleMusic SwiftUI */ = {
 			isa = PBXGroup;
 			children = (
 				A594AC4E29E5B2CC00BF87FE /* App */,
@@ -77,7 +113,7 @@
 				A55E512D29E45A1D004D275E /* Assets.xcassets */,
 				A55E512F29E45A1D004D275E /* Preview Content */,
 			);
-			path = "Home Work 23";
+			path = "AppleMusic SwiftUI";
 			sourceTree = "<group>";
 		};
 		A55E512F29E45A1D004D275E /* Preview Content */ = {
@@ -154,6 +190,9 @@
 		A594AC4D29E5B29600BF87FE /* ModuleRadio */ = {
 			isa = PBXGroup;
 			children = (
+				A55A7BD529EC92ED00CBBD76 /* Model */,
+				A55A7BD629EC92F500CBBD76 /* View model */,
+				A55A7BD729EC92FE00CBBD76 /* Views */,
 			);
 			path = ModuleRadio;
 			sourceTree = "<group>";
@@ -185,9 +224,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		A55E512529E45A1B004D275E /* Home Work 23 */ = {
+		A55E512529E45A1B004D275E /* AppleMusic SwiftUI */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = A55E513429E45A1D004D275E /* Build configuration list for PBXNativeTarget "Home Work 23" */;
+			buildConfigurationList = A55E513429E45A1D004D275E /* Build configuration list for PBXNativeTarget "AppleMusic SwiftUI" */;
 			buildPhases = (
 				A55E512229E45A1B004D275E /* Sources */,
 				A55E512329E45A1B004D275E /* Frameworks */,
@@ -197,9 +236,9 @@
 			);
 			dependencies = (
 			);
-			name = "Home Work 23";
+			name = "AppleMusic SwiftUI";
 			productName = "Home Work 23";
-			productReference = A55E512629E45A1B004D275E /* Home Work 23.app */;
+			productReference = A55E512629E45A1B004D275E /* AppleMusic SwiftUI.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -217,7 +256,7 @@
 					};
 				};
 			};
-			buildConfigurationList = A55E512129E45A1B004D275E /* Build configuration list for PBXProject "Home Work 23" */;
+			buildConfigurationList = A55E512129E45A1B004D275E /* Build configuration list for PBXProject "AppleMusic SwiftUI" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -230,7 +269,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				A55E512529E45A1B004D275E /* Home Work 23 */,
+				A55E512529E45A1B004D275E /* AppleMusic SwiftUI */,
 			);
 		};
 /* End PBXProject section */
@@ -252,15 +291,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A55A7BD929EC935700CBBD76 /* RadioView.swift in Sources */,
 				A55E512C29E45A1B004D275E /* MediaView.swift in Sources */,
 				A594AC5229E5D3E600BF87FE /* EditMore +Ext.swift in Sources */,
+				A55A7BDE29ECA36000CBBD76 /* StationsView.swift in Sources */,
 				A55E513829E45A7F004D275E /* TabViewAppleMusic.swift in Sources */,
 				A594AC5429E5F23700BF87FE /* PlayerView.swift in Sources */,
 				A594AC4829E5AF8700BF87FE /* ContentView.swift in Sources */,
 				A55E513E29E46A96004D275E /* MediaList.swift in Sources */,
+				A55A7BE029ECB56100CBBD76 /* RadioModel.swift in Sources */,
 				A594AC4C29E5B27E00BF87FE /* MediaModel.swift in Sources */,
+				A55A7BE229ECB56C00CBBD76 /* RadioVIewModel.swift in Sources */,
 				A57E75C729E6F9AF00D2D158 /* MediaViewModel.swift in Sources */,
 				A594AC4A29E5B25500BF87FE /* MediaRow.swift in Sources */,
+				A55A7BDB29EC99DD00CBBD76 /* ShowsView.swift in Sources */,
 				A55E513A29E46649004D275E /* MediaTitle.swift in Sources */,
 				A55E512A29E45A1B004D275E /* Home_Work_23App.swift in Sources */,
 			);
@@ -390,7 +434,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"Home Work 23/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"AppleMusic SwiftUI/Preview Content\"";
 				DEVELOPMENT_TEAM = 8PHY3R68LB;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -419,7 +463,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"Home Work 23/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"AppleMusic SwiftUI/Preview Content\"";
 				DEVELOPMENT_TEAM = 8PHY3R68LB;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -444,7 +488,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		A55E512129E45A1B004D275E /* Build configuration list for PBXProject "Home Work 23" */ = {
+		A55E512129E45A1B004D275E /* Build configuration list for PBXProject "AppleMusic SwiftUI" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A55E513229E45A1D004D275E /* Debug */,
@@ -453,7 +497,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		A55E513429E45A1D004D275E /* Build configuration list for PBXNativeTarget "Home Work 23" */ = {
+		A55E513429E45A1D004D275E /* Build configuration list for PBXNativeTarget "AppleMusic SwiftUI" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A55E513529E45A1D004D275E /* Debug */,
