@@ -11,32 +11,34 @@ struct ShowsView: View {
     
     var data = ["africa-radio", "audiosystem-radio", "beats-radio", "hip-hop-radio", "latino-radio", "pop-radio", "queen-radio"]
     
+    @ObservedObject var model = RadioViewModel()
+    
     let rows = [
         GridItem(.flexible())
     ]
     var body: some View {
         ScrollView(.horizontal, showsIndicators: false) {
             LazyHGrid(rows: rows, content: {
-                ForEach(data, id: \.self) { data in
+                ForEach(model.dataShows) { dataModel in
                     
                     VStack(alignment: .leading) {
                         
-                        Text("Exlusive")
+                        Text(dataModel.header ?? "Error")
                             .foregroundColor(.gray)
                             .font(.footnote)
                             .textCase(.uppercase)
                         
-                        Text("Named")
+                        Text(dataModel.name)
                             .font(.title2)
                         
                         Spacer()
                             .frame(height: 3)
     
-                        Text("Description")
+                        Text(dataModel.descrioption)
                             .foregroundColor(.gray)
                             .font(.title3)
                             
-                        Image(data)
+                        Image(dataModel.image)
                             .resizable()
                             .scaledToFill()
                             .frame(width: 350, height: 250)

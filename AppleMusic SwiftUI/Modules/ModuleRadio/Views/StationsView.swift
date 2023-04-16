@@ -9,7 +9,9 @@ import SwiftUI
 
 struct StationsView: View {
     
-    let model = ["classic-music", "dance-music", "relax-music", "top-music" ]
+//    let model = ["classic-music", "dance-music", "relax-music", "top-music" ]
+    
+    @ObservedObject var model = RadioViewModel()
     
     let colums = [
         GridItem(.flexible())
@@ -18,17 +20,17 @@ struct StationsView: View {
     var body: some View {
         LazyVGrid(columns: colums, alignment: .leading) {
             
-            ForEach(model, id: \.self) { model in
+            ForEach(model.dataStations) { dataModel in
                 HStack(spacing: 20) {
-                    Image(model)
+                    Image(dataModel.image)
                         .resizable()
                         .scaledToFill()
                         .frame(width: 120, height: 120)
                         .cornerRadius(5)
                     VStack {
-                        Text(model)
+                        Text(dataModel.name)
                             .font(.title3)
-                        Text(model)
+                        Text(dataModel.descrioption)
                             .font(.callout)
                             .foregroundColor(Color.gray)
                     }
