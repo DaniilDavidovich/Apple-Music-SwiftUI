@@ -8,9 +8,7 @@
 import SwiftUI
 
 struct StationsView: View {
-    
-//    let model = ["classic-music", "dance-music", "relax-music", "top-music" ]
-    
+        
     @ObservedObject var model = RadioViewModel()
     
     let colums = [
@@ -21,16 +19,23 @@ struct StationsView: View {
         LazyVGrid(columns: colums, alignment: .leading) {
             
             ForEach(model.dataStations) { dataModel in
+                
                 HStack(spacing: 20) {
+                    
                     Image(dataModel.image)
                         .resizable()
                         .scaledToFill()
                         .frame(width: 120, height: 120)
                         .cornerRadius(5)
-                    VStack {
-                        Text(dataModel.name)
+                    
+                    VStack(alignment: .leading) {
+                        
+                        Text(dataModel.title)
                             .font(.title3)
+                            .multilineTextAlignment(.leading)
+                        
                         Text(dataModel.descrioption)
+                            .multilineTextAlignment(.leading)
                             .font(.callout)
                             .foregroundColor(Color.gray)
                     }
@@ -38,7 +43,6 @@ struct StationsView: View {
                 Divider()
             }
             .padding(.horizontal, 20)
-            
         }
     }
 }

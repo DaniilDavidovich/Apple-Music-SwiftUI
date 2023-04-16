@@ -9,13 +9,12 @@ import SwiftUI
 
 struct ShowsView: View {
     
-    var data = ["africa-radio", "audiosystem-radio", "beats-radio", "hip-hop-radio", "latino-radio", "pop-radio", "queen-radio"]
-    
     @ObservedObject var model = RadioViewModel()
     
     let rows = [
         GridItem(.flexible())
     ]
+    
     var body: some View {
         ScrollView(.horizontal, showsIndicators: false) {
             LazyHGrid(rows: rows, content: {
@@ -28,7 +27,7 @@ struct ShowsView: View {
                             .font(.footnote)
                             .textCase(.uppercase)
                         
-                        Text(dataModel.name)
+                        Text(dataModel.title)
                             .font(.title2)
                         
                         Spacer()
@@ -44,12 +43,10 @@ struct ShowsView: View {
                             .frame(width: 350, height: 250)
                             .cornerRadius(5)
                     }
-                    
                 }
             })
             .padding(20)
         }
-       
     }
 }
 

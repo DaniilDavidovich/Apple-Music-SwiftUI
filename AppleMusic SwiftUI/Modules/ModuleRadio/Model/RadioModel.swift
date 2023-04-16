@@ -7,10 +7,10 @@
 
 import Foundation
 
-struct RadioModel: Identifiable, Hashable {
+struct RadioModel: Identifiable {
     let id = UUID()
     let header: String?
-    let name: String
+    let title: String
     let descrioption: String
     let image: String
 }
