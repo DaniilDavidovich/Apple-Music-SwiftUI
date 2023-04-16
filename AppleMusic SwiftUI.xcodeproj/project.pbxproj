@@ -23,7 +23,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		A55E512629E45A1B004D275E /* Home Work 23.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Home Work 23.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A55E512629E45A1B004D275E /* AppleMusic SwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "AppleMusic SwiftUI.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A55E512929E45A1B004D275E /* Home_Work_23App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home_Work_23App.swift; sourceTree = "<group>"; };
 		A55E512B29E45A1B004D275E /* MediaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaView.swift; sourceTree = "<group>"; };
 		A55E512D29E45A1D004D275E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -53,7 +53,7 @@
 		A55E511D29E45A1B004D275E = {
 			isa = PBXGroup;
 			children = (
-				A55E512829E45A1B004D275E /* Home Work 23 */,
+				A55E512829E45A1B004D275E /* AppleMusic SwiftUI */,
 				A55E512729E45A1B004D275E /* Products */,
 			);
 			sourceTree = "<group>";
@@ -61,12 +61,12 @@
 		A55E512729E45A1B004D275E /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				A55E512629E45A1B004D275E /* Home Work 23.app */,
+				A55E512629E45A1B004D275E /* AppleMusic SwiftUI.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		A55E512829E45A1B004D275E /* Home Work 23 */ = {
+		A55E512829E45A1B004D275E /* AppleMusic SwiftUI */ = {
 			isa = PBXGroup;
 			children = (
 				A594AC4E29E5B2CC00BF87FE /* App */,
@@ -77,7 +77,7 @@
 				A55E512D29E45A1D004D275E /* Assets.xcassets */,
 				A55E512F29E45A1D004D275E /* Preview Content */,
 			);
-			path = "Home Work 23";
+			path = "AppleMusic SwiftUI";
 			sourceTree = "<group>";
 		};
 		A55E512F29E45A1D004D275E /* Preview Content */ = {
@@ -185,9 +185,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		A55E512529E45A1B004D275E /* Home Work 23 */ = {
+		A55E512529E45A1B004D275E /* AppleMusic SwiftUI */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = A55E513429E45A1D004D275E /* Build configuration list for PBXNativeTarget "Home Work 23" */;
+			buildConfigurationList = A55E513429E45A1D004D275E /* Build configuration list for PBXNativeTarget "AppleMusic SwiftUI" */;
 			buildPhases = (
 				A55E512229E45A1B004D275E /* Sources */,
 				A55E512329E45A1B004D275E /* Frameworks */,
@@ -197,9 +197,9 @@
 			);
 			dependencies = (
 			);
-			name = "Home Work 23";
+			name = "AppleMusic SwiftUI";
 			productName = "Home Work 23";
-			productReference = A55E512629E45A1B004D275E /* Home Work 23.app */;
+			productReference = A55E512629E45A1B004D275E /* AppleMusic SwiftUI.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -217,7 +217,7 @@
 					};
 				};
 			};
-			buildConfigurationList = A55E512129E45A1B004D275E /* Build configuration list for PBXProject "Home Work 23" */;
+			buildConfigurationList = A55E512129E45A1B004D275E /* Build configuration list for PBXProject "AppleMusic SwiftUI" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -230,7 +230,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				A55E512529E45A1B004D275E /* Home Work 23 */,
+				A55E512529E45A1B004D275E /* AppleMusic SwiftUI */,
 			);
 		};
 /* End PBXProject section */
@@ -444,7 +444,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		A55E512129E45A1B004D275E /* Build configuration list for PBXProject "Home Work 23" */ = {
+		A55E512129E45A1B004D275E /* Build configuration list for PBXProject "AppleMusic SwiftUI" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A55E513229E45A1D004D275E /* Debug */,
@@ -453,7 +453,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		A55E513429E45A1D004D275E /* Build configuration list for PBXNativeTarget "Home Work 23" */ = {
+		A55E513429E45A1D004D275E /* Build configuration list for PBXNativeTarget "AppleMusic SwiftUI" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A55E513529E45A1D004D275E /* Debug */,
