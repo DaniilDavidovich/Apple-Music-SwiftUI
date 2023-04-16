@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		A55A7BD929EC935700CBBD76 /* RadioView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A55A7BD829EC935700CBBD76 /* RadioView.swift */; };
 		A55A7BDB29EC99DD00CBBD76 /* ShowsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A55A7BDA29EC99DD00CBBD76 /* ShowsView.swift */; };
+		A55A7BDE29ECA36000CBBD76 /* StationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A55A7BDD29ECA36000CBBD76 /* StationsView.swift */; };
 		A55E512A29E45A1B004D275E /* Home_Work_23App.swift in Sources */ = {isa = PBXBuildFile; fileRef = A55E512929E45A1B004D275E /* Home_Work_23App.swift */; };
 		A55E512C29E45A1B004D275E /* MediaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A55E512B29E45A1B004D275E /* MediaView.swift */; };
 		A55E512E29E45A1D004D275E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A55E512D29E45A1D004D275E /* Assets.xcassets */; };
@@ -27,6 +28,7 @@
 /* Begin PBXFileReference section */
 		A55A7BD829EC935700CBBD76 /* RadioView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioView.swift; sourceTree = "<group>"; };
 		A55A7BDA29EC99DD00CBBD76 /* ShowsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowsView.swift; sourceTree = "<group>"; };
+		A55A7BDD29ECA36000CBBD76 /* StationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationsView.swift; sourceTree = "<group>"; };
 		A55E512629E45A1B004D275E /* AppleMusic SwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "AppleMusic SwiftUI.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A55E512929E45A1B004D275E /* Home_Work_23App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home_Work_23App.swift; sourceTree = "<group>"; };
 		A55E512B29E45A1B004D275E /* MediaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaView.swift; sourceTree = "<group>"; };
@@ -73,6 +75,7 @@
 			children = (
 				A55A7BD829EC935700CBBD76 /* RadioView.swift */,
 				A55A7BDA29EC99DD00CBBD76 /* ShowsView.swift */,
+				A55A7BDD29ECA36000CBBD76 /* StationsView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -285,6 +288,7 @@
 				A55A7BD929EC935700CBBD76 /* RadioView.swift in Sources */,
 				A55E512C29E45A1B004D275E /* MediaView.swift in Sources */,
 				A594AC5229E5D3E600BF87FE /* EditMore +Ext.swift in Sources */,
+				A55A7BDE29ECA36000CBBD76 /* StationsView.swift in Sources */,
 				A55E513829E45A7F004D275E /* TabViewAppleMusic.swift in Sources */,
 				A594AC5429E5F23700BF87FE /* PlayerView.swift in Sources */,
 				A594AC4829E5AF8700BF87FE /* ContentView.swift in Sources */,
