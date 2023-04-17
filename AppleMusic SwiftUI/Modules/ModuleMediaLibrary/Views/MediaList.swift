@@ -11,7 +11,7 @@ import SwiftUI
 
 struct MediaList: View {
     
-    @State var modelViewModel = MediaViewModel()
+    @ObservedObject var modelViewModel = MediaViewModel()
     
     @State private var isSelected: Bool = false
        
@@ -24,10 +24,7 @@ struct MediaList: View {
                             modelViewModel.update(model: mediaModel)
                         }
                     }
-                
             }
-            
-//            .onDelete(perform: onDelete)
             .onMove(perform: modelViewModel.move)
             .background(Color.clear)
             .listRowSeparator(.hidden, edges: .all)
@@ -37,8 +34,4 @@ struct MediaList: View {
         .listStyle(.inset)
         .background(Color.clear)
     }
-    
-//    func onMove(source: IndexSet, destination: Int) {
-//        model.move(fromOffsets: source, toOffset: destination)
-//    }
 }
