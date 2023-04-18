@@ -8,21 +8,32 @@
 import SwiftUI
 
 struct CategoriesView: View {
+    
+    
+    @ObservedObject var model = SearchViewModel()
+    
     var item = [
+        GridItem(.flexible()),
         GridItem(.flexible())
     ]
     
-    @State var data = ["me","me","me","me","me"]
-    
     var body: some View {
-        ScrollView(.vertical) {
-            LazyVGrid(columns: item) {
-                ForEach(data, id: \.self) { item in
+        LazyVGrid(columns: item, alignment: .leading) {
+            ForEach(model.categoriesModel) { item in
+                VStack {
                     Rectangle()
-                        .frame(width: 20, height: 20)
+                        .frame(width: 180, height: 135)
+                        .cornerRadius(20)
+                        .padding()
+                        .padding(.horizontal, 8)
+                    Text(item.title)
+                        .padding(.top, -50)
+                        .foregroundColor(.white)
+                    
                 }
             }
         }
+        .edgesIgnoringSafeArea(.bottom)
     }
 }
 

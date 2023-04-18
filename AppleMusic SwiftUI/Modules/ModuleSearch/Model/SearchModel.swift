@@ -6,3 +6,9 @@
 //
 
 import Foundation
+struct SearchModel: Identifiable {
+    var id = UUID()
+    var title: String
+    var description: String?
+    var image: String
+}

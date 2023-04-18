@@ -63,7 +63,7 @@ class RadioViewModel: ObservableObject {
             )
         ]
         
-        self.dataShows.append(contentsOf: newData)
+        dataShows.append(contentsOf: newData)
     }
     
     func newDataStations() {
