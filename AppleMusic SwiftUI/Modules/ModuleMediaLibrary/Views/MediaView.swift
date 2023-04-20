@@ -30,7 +30,8 @@ struct MediaView: View {
             .navigationBarTitle("Media Library")
             
             .navigationBarItems(
-                trailing: Button(action: {
+                trailing:
+                    Button(action: {
                     isEditing.toggle()
                     editMode = isEditing ? .active : .inactive
                 })

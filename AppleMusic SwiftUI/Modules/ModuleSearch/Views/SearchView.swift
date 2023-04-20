@@ -1,0 +1,27 @@
+//
+//  SearchView.swift
+//  AppleMusic SwiftUI
+//
+//  Created by Daniil Davidovich on 17.04.23.
+//
+
+import SwiftUI
+
+struct SearchView: View {
+    var body: some View {
+        NavigationView {
+            VStack {
+                SearchTextFieldView()
+                SearchCategoriesView()
+            }
+            .navigationBarTitle("Search")
+            .padding(.bottom, 80)
+        }
+    }
+}
+
+struct SearchView_Previews: PreviewProvider {
+    static var previews: some View {
+        SearchView()
+    }
+}

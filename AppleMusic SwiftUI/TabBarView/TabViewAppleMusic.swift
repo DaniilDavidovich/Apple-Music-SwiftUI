@@ -23,7 +23,7 @@ struct TabViewAppleMusic: View {
                     Image(systemName: Images.iconRadio)
                 }
             
-            Text("Search")
+            SearchView()
                 .tabItem {
                     Text(Constants.titleSearch)
                     Image(systemName: Images.iconSearch)
