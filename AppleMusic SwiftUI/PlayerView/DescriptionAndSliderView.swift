@@ -24,12 +24,15 @@ struct DescriptionAndSliderView: View {
                 }
                 
                 Spacer()
-                Button {
-                    //
+                Menu {
+                    Button("Share Redactors") {
+                        //
+                    }
                 } label: {
-                    Text("Me")
+                    Image(systemName: "ellipsis.circle")
+                        .font(.system(size: 27))
                 }
-                
+                .padding(.top, 1)
             }
             
             Slider(value: $sliderValue, in: range, step: 0.01)

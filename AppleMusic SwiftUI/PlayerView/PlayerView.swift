@@ -10,6 +10,8 @@ import SwiftUI
 
 
 struct PlayerView: View {
+    @State private var showModal = false
+
     var body: some View {
         VStack {
             ZStack(alignment: .leading) {
@@ -53,12 +55,19 @@ struct PlayerView: View {
             }
             .frame(height: 70)
             .offset(y: -49)
+            .onTapGesture {
+                showModal = true
+            }
+            .sheet(isPresented: $showModal) {
+                PlayerModalView()
+            }
         }
-
+        
         Divider()
             .padding(.top, -15.0)
     }
 }
+
 
 struct PlayerWindow_Previews: PreviewProvider {
     static var previews: some View {

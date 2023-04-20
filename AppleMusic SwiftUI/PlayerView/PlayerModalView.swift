@@ -9,11 +9,16 @@ import SwiftUI
 
 struct PlayerModalView: View {
    
-    
     var body: some View {
-        VStack(alignment: .center) {
+        VStack(alignment: .center, spacing: 40) {
             ImageView()
+                .padding(.vertical, 90)
             DescriptionAndSliderView()
+
+            PlayerButtonsView()
+//                .padding(.top, 40)
+            
+            SliderVolueAndOtherVies()
         }
     }
 }

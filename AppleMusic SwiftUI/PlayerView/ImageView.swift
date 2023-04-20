@@ -12,7 +12,7 @@ struct ImageView: View {
         Image("anima-additionalAlboms")
             .resizable()
             .scaledToFill()
-            .frame(width: 200, height: 200)
+            .frame(width: 250, height: 250)
             .cornerRadius(15)
             .shadow(color: Color(UIColor.systemGray), radius: 8, y: 4)
     }
