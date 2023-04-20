@@ -9,15 +9,26 @@ import SwiftUI
 
 struct PlayerButtonsView: View {
     var body: some View {
-        HStack(spacing: 100) {
-            Image(systemName: "backward.fill")
-                .font(.largeTitle)
-            Image(systemName: "play.fill")
-                .font(.largeTitle)
-            Image(systemName: "forward.fill")
-                .font(.largeTitle)
+        HStack(spacing: 80) {
+            Button {
+                //
+            } label: {
+                Image(systemName: "backward.fill")
+            }
+            Button {
+                //
+            } label: {
+                Image(systemName: "play.fill")
+                    .font(.system(size: 45))
+            }
+            Button {
+                //
+            } label: {
+                Image(systemName: "forward.fill")
+            }
         }
         .foregroundColor(Color(UIColor.systemGray3))
+        .font(.largeTitle)
         
     }
 }

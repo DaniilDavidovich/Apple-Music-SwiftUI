@@ -10,7 +10,10 @@ import SwiftUI
 
 
 struct PlayerView: View {
+    
     @State private var showModal = false
+    
+    @Environment(\.presentationMode) var presentationMode
 
     var body: some View {
         VStack {
@@ -58,11 +61,12 @@ struct PlayerView: View {
             .onTapGesture {
                 showModal = true
             }
+            
             .sheet(isPresented: $showModal) {
-                PlayerModalView()
+                      PlayerModalView()
             }
+            
         }
-        
         Divider()
             .padding(.top, -15.0)
     }

@@ -10,7 +10,7 @@ import SwiftUI
 struct DescriptionAndSliderView: View {
     
     
-    @State private var sliderValue = 1.0
+    @State private var sliderValue = 0.0
         
     @State private var range = 0...4.32
     
@@ -25,7 +25,7 @@ struct DescriptionAndSliderView: View {
                 
                 Spacer()
                 Menu {
-                    Button("Share Redactors") {
+                    Button("Share Music") {
                         //
                     }
                 } label: {
@@ -33,6 +33,7 @@ struct DescriptionAndSliderView: View {
                         .font(.system(size: 27))
                 }
                 .padding(.top, 1)
+                .foregroundColor(.gray)
             }
             
             Slider(value: $sliderValue, in: range, step: 0.01)
