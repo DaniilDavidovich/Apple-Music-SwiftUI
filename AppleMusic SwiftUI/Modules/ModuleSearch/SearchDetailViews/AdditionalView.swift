@@ -38,15 +38,18 @@ struct AdditionalView: View {
                             VStack {
                                 Image(data.image)
                                     .resizable()
-                                    .scaledToFill()
                                     .cornerRadius(15)
+                                    .frame(width: 180, height: 180)
                                 Text(data.title)
                                 Text(data.description ?? "Error")
                             }
+                            .padding(.horizontal, 3)
                             
                         }
                     }
+                    .padding(.horizontal, 20)
                 }
+                
             }
             
         } else if contstant == .alboms {
@@ -62,15 +65,17 @@ struct AdditionalView: View {
                             VStack {
                                 Image(data.image)
                                     .resizable()
-                                    .scaledToFill()
                                     .cornerRadius(15)
+                                    .frame(width: 180, height: 180)
                                 Text(data.title)
                                 Text(data.description ?? "Error")
                             }
-                            
+                            .padding(.horizontal, 3)   
                         }
                     }
+                    .padding(.horizontal, 20)
                 }
+                
             }
             
         } else if contstant == .hits {
@@ -88,16 +93,19 @@ struct AdditionalView: View {
                             VStack {
                                 Image(data.image)
                                     .resizable()
-                                    .scaledToFill()
+                                    
                                     .cornerRadius(15)
+                                    .frame(width: 180, height: 180)
                                 Text(data.title)
                                 Text(data.description ?? "Error")
                             }
+                            .padding(.horizontal, 3)
                             
                         }
                     }
+                    .padding(.horizontal, 20)
                 }
-                .padding(.horizontal, 20)
+                
             }
         }
     }
