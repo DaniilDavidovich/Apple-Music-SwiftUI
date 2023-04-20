@@ -14,9 +14,9 @@ struct SearchDetailView: View {
     ]
     
     @ObservedObject var searchDetailModel = SearchDetailViewModel()
+    @Environment(\.presentationMode)  var presentationMode
     
     var body: some View {
-        
         ScrollView(.vertical) {
             VStack(alignment: .leading) {
                 MainView(data: searchDetailModel)
@@ -26,12 +26,26 @@ struct SearchDetailView: View {
             }
         }
         .padding(.bottom, 80)
+        .navigationBarTitle("Pop in Russia")
+        .navigationBarBackButtonHidden(true)
         .toolbar {
+            
+            ToolbarItem(placement: .navigationBarLeading) {
+                Button(action: {
+                        presentationMode.wrappedValue.dismiss()
+                    }) {
+                        HStack {
+                            Image(systemName: "chevron.backward")
+                                .foregroundColor(Color.red)
+                        }
+                    }
+            }
+            
             ToolbarItem(placement: .navigationBarTrailing) {
                 
                 Menu {
                     Button("Share Redactors") {
-                        
+                        //
                     }
                 } label: {
                     Image(systemName: "ellipsis.circle")
