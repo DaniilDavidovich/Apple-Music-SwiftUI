@@ -11,28 +11,14 @@ struct SearchView: View {
     var body: some View {
         NavigationView {
             
-            ScrollView(.vertical) {
-                VStack(alignment: .leading) {
-                    TextFieldView()
-                        .toolbar {
-                            ToolbarItem(placement: .navigationBarTrailing) {
-                                
-                            }
-                        }
-                    Text("Search on categories")
-                        .font(.title2)
-                        .bold()
-                        .padding(.leading, 22)
-                        .padding(.top)
-                    CategoriesView()
-                    Spacer()
-                    
-                    
-                    
-                }
-                .navigationBarTitle("Search")
+            
+            VStack(alignment: .leading) {
+                SearchTextFieldView()
                 
+                SearchCategoriesView()
             }
+            .navigationBarTitle("Search")
+            
         }
     }
 }

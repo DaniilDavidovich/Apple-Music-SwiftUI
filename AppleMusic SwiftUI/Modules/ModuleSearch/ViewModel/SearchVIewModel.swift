@@ -25,6 +25,13 @@ class SearchViewModel: ObservableObject {
             SearchModel(title: "Title", image: "Black"),
             SearchModel(title: "Title", image: "Black"),
             SearchModel(title: "Title", image: "Black"),
+            SearchModel(title: "Title", image: "Black"),
+            SearchModel(title: "Title", image: "Black"),
+            SearchModel(title: "Title", image: "Black"),
+            SearchModel(title: "Title", image: "Black"),
+            SearchModel(title: "Title", image: "Black"),
+            SearchModel(title: "Title", image: "Black"),
+            
             ]
         categoriesModel.append(contentsOf: newData)
     }
