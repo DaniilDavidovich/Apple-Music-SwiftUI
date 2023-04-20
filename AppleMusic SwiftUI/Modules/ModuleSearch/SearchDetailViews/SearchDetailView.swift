@@ -13,16 +13,16 @@ struct SearchDetailView: View {
         GridItem(.flexible())
     ]
     
-    @ObservedObject var data = SearchViewModel()
+    @ObservedObject var searchDetailModel = SearchDetailViewModel()
     
     var body: some View {
         
             ScrollView(.vertical) {
                 VStack(alignment: .leading) {
-                    MainView(data: data)
-                    AdditionalView(data: data)
-                    AdditionalView(data: data)
-                    AdditionalView(data: data)
+                    MainView(data: searchDetailModel)
+                    AdditionalView(contstant: .playlist, data: searchDetailModel)
+                    AdditionalView(contstant: .alboms, data: searchDetailModel)
+                    AdditionalView(contstant: .hits, data: searchDetailModel)
                 }
         }
         .padding(.bottom, 80)

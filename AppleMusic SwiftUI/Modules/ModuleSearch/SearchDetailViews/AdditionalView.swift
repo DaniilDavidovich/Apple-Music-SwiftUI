@@ -13,37 +13,104 @@ struct AdditionalView: View {
         GridItem(.flexible())
     ]
     
-    var data: SearchViewModel
+    enum Flags: String {
+        case playlist = "Playlists"
+        case alboms = "Alboms"
+        case hits = "Hits"
+    }
+    
+    var contstant: Flags
+    
+    var data: SearchDetailViewModel
     
     var body: some View {
-        VStack(alignment: .leading) {
-            Text("Me")
-                .font(.title2)
-                .bold()
-                .padding(.leading, 20)
-            ScrollView(.horizontal, showsIndicators: false) {
-                LazyHGrid(rows: rows) {
-                    ForEach(data.categoriesModel) { data in
-                        VStack {
-                            Image(data.image)
-                                .resizable()
-                                .scaledToFill()
-                                .cornerRadius(15)
-                            Text("1")
-                            Text("2")
-                        }
+        if contstant == .playlist {
+            VStack(alignment: .leading) {
+                Text(Titles.playlists)
+                    .font(.title2)
+                    .bold()
+                    .padding(.leading, 20)
+                ScrollView(.horizontal, showsIndicators: false) {
+                    LazyHGrid(rows: rows) {
                         
+                        
+                        ForEach(data.playlistAdditionalViewModel) { data in
+                            VStack {
+                                Image(data.image)
+                                    .resizable()
+                                    .scaledToFill()
+                                    .cornerRadius(15)
+                                Text(data.title)
+                                Text(data.description ?? "Error")
+                            }
+                            
+                        }
                     }
-                    
+                }
+            }
+            
+        } else if contstant == .alboms {
+            VStack(alignment: .leading) {
+                Text(Titles.alboms)
+                    .font(.title2)
+                    .bold()
+                    .padding(.leading, 20)
+                ScrollView(.horizontal, showsIndicators: false) {
+                    LazyHGrid(rows: rows) {
+                        
+                        ForEach(data.albomsAdditionalViewModel) { data in
+                            VStack {
+                                Image(data.image)
+                                    .resizable()
+                                    .scaledToFill()
+                                    .cornerRadius(15)
+                                Text(data.title)
+                                Text(data.description ?? "Error")
+                            }
+                            
+                        }
+                    }
+                }
+            }
+            
+        } else if contstant == .hits {
+            
+            VStack(alignment: .leading) {
+                Text(Titles.hits)
+                    .font(.title2)
+                    .bold()
+                    .padding(.leading, 20)
+                ScrollView(.horizontal, showsIndicators: false) {
+                    LazyHGrid(rows: rows) {
+                        
+                        
+                        ForEach(data.hitsAdditionalViewModel) { data in
+                            VStack {
+                                Image(data.image)
+                                    .resizable()
+                                    .scaledToFill()
+                                    .cornerRadius(15)
+                                Text(data.title)
+                                Text(data.description ?? "Error")
+                            }
+                            
+                        }
+                    }
                 }
                 .padding(.horizontal, 20)
             }
         }
     }
+    
+    fileprivate enum Titles {
+        static let hits = "Hits"
+        static let alboms = "Alboms"
+        static let playlists = "Playlists"
+    }
 }
 
 struct AdditionalView_Previews: PreviewProvider {
     static var previews: some View {
-        AdditionalView(data: SearchViewModel())
+        AdditionalView(contstant: .playlist, data: SearchDetailViewModel())
     }
 }
