@@ -10,7 +10,7 @@ import SwiftUI
 struct SearchView: View {
     var body: some View {
         NavigationView {
-            VStack(alignment: .leading) {
+            VStack {
                 SearchTextFieldView()
                 SearchCategoriesView()
             }

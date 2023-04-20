@@ -28,7 +28,7 @@ struct SearchCategoriesView: View {
                     .padding(.bottom, -13)
                     .padding(.top)
                 
-                LazyVGrid(columns: item, alignment: .leading) {
+                LazyVGrid(columns: item, alignment: .leading, spacing: 3) {
                     
                     ForEach(model.categoriesModel) { item in
                         NavigationLink(destination: SearchDetailView()) {
@@ -37,10 +37,8 @@ struct SearchCategoriesView: View {
                                 Image(item.image)
                                     .resizable()
                                     .scaledToFill()
-                                    .frame(width: 190, height: 125)
+                                    .frame(width: UIScreen.main.bounds.width / 2 - 20, height: 125) // настройка ширины
                                     .cornerRadius(10)
-                                
-                                
                                 
                                 Text(item.title)
                                     .padding(.top, -40)
@@ -50,6 +48,7 @@ struct SearchCategoriesView: View {
                                 
                             }
                             .padding(.vertical, -2)
+                            .padding(.horizontal, 2)
                             
                         }
                         
@@ -60,10 +59,9 @@ struct SearchCategoriesView: View {
             }
             
         }
-        
-        
     }
 }
+
 
 struct CategoriesView_Previews: PreviewProvider {
     static var previews: some View {
