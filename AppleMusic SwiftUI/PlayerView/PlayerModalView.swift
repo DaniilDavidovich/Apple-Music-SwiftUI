@@ -10,20 +10,24 @@ import SwiftUI
 struct PlayerModalView: View {
    
     var body: some View {
-        VStack(alignment: .center, spacing: 30) {
-            Rectangle()
-                .foregroundColor(Color(UIColor.systemGray5))
-                .frame(width: 50, height: 10)
-                .cornerRadius(10)
-                .padding(.bottom)
-            ImageView()
-                .padding(.vertical, 30)
-            DescriptionAndSliderView()
-
-            PlayerButtonsView()
-//                .padding(.top, 40)
-            
-            SliderVolueAndOtherViews()
+        GeometryReader { geometry in
+            VStack(alignment: .center, spacing: 10) {
+                Rectangle()
+                    .foregroundColor(Color(UIColor.systemGray5))
+                    .frame(width: 50, height: 10)
+                    .cornerRadius(10)
+                    
+                
+                ImageView()
+                    .padding(.vertical, 100)
+                
+                DescriptionAndSliderView()
+                
+                PlayerButtonsView()
+                
+                SliderVolueAndOtherViews()
+            }
+            .padding(.vertical, geometry.size.height * 0.01)
         }
     }
 }
