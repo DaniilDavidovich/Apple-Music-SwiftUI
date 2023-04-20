@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct HPlayListAndHitsView: View {
+struct AdditionalView: View {
     
     @State var rows = [
         GridItem(.flexible())
@@ -42,8 +42,8 @@ struct HPlayListAndHitsView: View {
     }
 }
 
-struct HPlayListAndHitsView_Previews: PreviewProvider {
+struct AdditionalView_Previews: PreviewProvider {
     static var previews: some View {
-        HPlayListAndHitsView(data: SearchViewModel())
+        AdditionalView(data: SearchViewModel())
     }
 }

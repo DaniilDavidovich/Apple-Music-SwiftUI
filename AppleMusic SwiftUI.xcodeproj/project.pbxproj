@@ -9,8 +9,8 @@
 /* Begin PBXBuildFile section */
 		A52022B229F086C700EE963C /* SearchListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52022B129F086C700EE963C /* SearchListView.swift */; };
 		A52022B429F0A63100EE963C /* SearchDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52022B329F0A63100EE963C /* SearchDetailView.swift */; };
-		A52022B729F0B94900EE963C /* HFeaturedPlaylistView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52022B629F0B94900EE963C /* HFeaturedPlaylistView.swift */; };
-		A52022B929F0BA6E00EE963C /* HPlayListAndHitsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52022B829F0BA6E00EE963C /* HPlayListAndHitsView.swift */; };
+		A52022B729F0B94900EE963C /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52022B629F0B94900EE963C /* MainView.swift */; };
+		A52022B929F0BA6E00EE963C /* AdditionalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52022B829F0BA6E00EE963C /* AdditionalView.swift */; };
 		A55A7BD929EC935700CBBD76 /* RadioView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A55A7BD829EC935700CBBD76 /* RadioView.swift */; };
 		A55A7BDB29EC99DD00CBBD76 /* ShowsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A55A7BDA29EC99DD00CBBD76 /* ShowsView.swift */; };
 		A55A7BDE29ECA36000CBBD76 /* StationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A55A7BDD29ECA36000CBBD76 /* StationsView.swift */; };
@@ -39,8 +39,8 @@
 /* Begin PBXFileReference section */
 		A52022B129F086C700EE963C /* SearchListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchListView.swift; sourceTree = "<group>"; };
 		A52022B329F0A63100EE963C /* SearchDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchDetailView.swift; sourceTree = "<group>"; };
-		A52022B629F0B94900EE963C /* HFeaturedPlaylistView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HFeaturedPlaylistView.swift; sourceTree = "<group>"; };
-		A52022B829F0BA6E00EE963C /* HPlayListAndHitsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HPlayListAndHitsView.swift; sourceTree = "<group>"; };
+		A52022B629F0B94900EE963C /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		A52022B829F0BA6E00EE963C /* AdditionalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdditionalView.swift; sourceTree = "<group>"; };
 		A55A7BD829EC935700CBBD76 /* RadioView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioView.swift; sourceTree = "<group>"; };
 		A55A7BDA29EC99DD00CBBD76 /* ShowsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowsView.swift; sourceTree = "<group>"; };
 		A55A7BDD29ECA36000CBBD76 /* StationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationsView.swift; sourceTree = "<group>"; };
@@ -82,8 +82,8 @@
 			isa = PBXGroup;
 			children = (
 				A52022B329F0A63100EE963C /* SearchDetailView.swift */,
-				A52022B629F0B94900EE963C /* HFeaturedPlaylistView.swift */,
-				A52022B829F0BA6E00EE963C /* HPlayListAndHitsView.swift */,
+				A52022B629F0B94900EE963C /* MainView.swift */,
+				A52022B829F0BA6E00EE963C /* AdditionalView.swift */,
 			);
 			path = SearchDetailViews;
 			sourceTree = "<group>";
@@ -353,7 +353,7 @@
 				A55A7BD929EC935700CBBD76 /* RadioView.swift in Sources */,
 				A5FB682C29EDBC0100EF53A3 /* SearchView.swift in Sources */,
 				A55E512C29E45A1B004D275E /* MediaView.swift in Sources */,
-				A52022B729F0B94900EE963C /* HFeaturedPlaylistView.swift in Sources */,
+				A52022B729F0B94900EE963C /* MainView.swift in Sources */,
 				A594AC5229E5D3E600BF87FE /* EditMore +Ext.swift in Sources */,
 				A55A7BDE29ECA36000CBBD76 /* StationsView.swift in Sources */,
 				A55E513829E45A7F004D275E /* TabViewAppleMusic.swift in Sources */,
@@ -361,7 +361,7 @@
 				A5FB682E29EDBED900EF53A3 /* SearchTextFieldView.swift in Sources */,
 				A594AC5429E5F23700BF87FE /* PlayerView.swift in Sources */,
 				A5FB683029EF040200EF53A3 /* SearchCategoriesView.swift in Sources */,
-				A52022B929F0BA6E00EE963C /* HPlayListAndHitsView.swift in Sources */,
+				A52022B929F0BA6E00EE963C /* AdditionalView.swift in Sources */,
 				A5FB682A29EDBBE700EF53A3 /* SearchVIewModel.swift in Sources */,
 				A594AC4829E5AF8700BF87FE /* ContentView.swift in Sources */,
 				A55E513E29E46A96004D275E /* MediaList.swift in Sources */,

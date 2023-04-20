@@ -10,15 +10,12 @@ import SwiftUI
 struct SearchView: View {
     var body: some View {
         NavigationView {
-            
-            
             VStack(alignment: .leading) {
                 SearchTextFieldView()
-                
                 SearchCategoriesView()
             }
             .navigationBarTitle("Search")
-            
+            .padding(.bottom, 80)
         }
     }
 }

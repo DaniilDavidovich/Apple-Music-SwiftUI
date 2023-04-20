@@ -16,17 +16,17 @@ struct SearchDetailView: View {
     @ObservedObject var data = SearchViewModel()
     
     var body: some View {
-        NavigationView {
+        
             ScrollView(.vertical) {
                 VStack(alignment: .leading) {
-                    HFeaturedPlaylistView(data: data)
-                    HPlayListAndHitsView(data: data)
-                    HPlayListAndHitsView(data: data)
-                    HPlayListAndHitsView(data: data)
+                    MainView(data: data)
+                    AdditionalView(data: data)
+                    AdditionalView(data: data)
+                    AdditionalView(data: data)
                 }
-            }
         }
         .padding(.bottom, 80)
+        .navigationBarTitle("Me")
     }
 }
 

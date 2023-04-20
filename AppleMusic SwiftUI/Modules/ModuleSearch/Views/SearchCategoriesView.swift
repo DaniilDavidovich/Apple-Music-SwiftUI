@@ -19,38 +19,50 @@ struct SearchCategoriesView: View {
     var body: some View {
         ScrollView(.vertical, showsIndicators: false) {
             VStack(alignment: .leading) {
+                
                 Text("Search on categories")
                     .frame(maxWidth: .infinity, alignment: .leading)
                     .font(.title2)
                     .bold()
-            }
+                    .padding(.leading, 20)
+                    .padding(.bottom, -13)
+                    .padding(.top)
                 
-                
-        LazyVGrid(columns: item, alignment: .leading) {
-            
-            ForEach(model.categoriesModel) { item in
-                NavigationLink(destination: SearchDetailView()) {
+                LazyVGrid(columns: item, alignment: .leading) {
                     
-                    
-                    VStack {
-                        Rectangle()
-                            .frame(height: 125)
-                            .cornerRadius(13)
-                        
-                        Text(item.title)
-                            .padding(.top, -40)
-                            .foregroundColor(.white)
+                    ForEach(model.categoriesModel) { item in
+                        NavigationLink(destination: SearchDetailView()) {
+                            
+                            VStack(alignment: .leading) {
+                                Image(item.image)
+                                    .resizable()
+                                    .scaledToFill()
+                                    .frame(width: 190, height: 125)
+                                    .cornerRadius(10)
+                                
+                                
+                                
+                                Text(item.title)
+                                    .padding(.top, -40)
+                                    .foregroundColor(Color.white)
+                                    .padding(.leading)
+                                    .bold()
+                                
+                            }
+                            .padding(.vertical, -2)
+                            
+                        }
                         
                     }
-                    .padding(.vertical, -4)
+                    
                 }
+                .padding()
             }
+            
         }
+        
+        
     }
-        .padding(.horizontal, 20)
-        .padding(.bottom, 80)
-        .edgesIgnoringSafeArea(.bottom)
-}
 }
 
 struct CategoriesView_Previews: PreviewProvider {

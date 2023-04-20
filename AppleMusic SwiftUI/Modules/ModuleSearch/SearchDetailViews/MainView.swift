@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct HFeaturedPlaylistView: View {
+struct MainView: View {
     
     var data: SearchViewModel
     
@@ -46,15 +46,14 @@ struct HFeaturedPlaylistView: View {
                 }
             })
             .padding(20)
-            .navigationBarTitle("Me")
         }
     }
     
     
 }
 
-struct HFeaturedPlaylistView_Previews: PreviewProvider {
+struct MainView_Previews: PreviewProvider {
     static var previews: some View {
-        HFeaturedPlaylistView(data: SearchViewModel())
+        MainView(data: SearchViewModel())
     }
 }
