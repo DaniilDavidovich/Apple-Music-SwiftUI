@@ -12,7 +12,7 @@ struct SearchTextFieldView: View {
     @State var text: String = ""
     var body: some View {
         VStack {
-               TextField("Your Mediateka", text: $text)
+               TextField("Artists, songs, texts and more...", text: $text)
                     .padding(.leading, 30)
                    .frame(height: 12)
                    .padding()
