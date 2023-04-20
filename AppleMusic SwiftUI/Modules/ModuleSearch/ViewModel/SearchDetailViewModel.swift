@@ -23,21 +23,27 @@ class SearchDetailViewModel: ObservableObject {
     
     func getMainViewModel() {
         let newData = [
-            SearchModel(title: "Millenium X",
-                        description: "Artik & Asti",
-                        image: "MilleniumX-detailMainView"),
+          
             SearchModel(title: "Pop Caramel",
                         description: "Russian Pop",
                         image: "popCaramel-detailMainView"),
+            
             SearchModel(title: "Pop In Russian Essentials",
                         description: "Russian Pop",
                         image: "popInRussianEssentials-detailMainView"),
+            
             SearchModel(title: "Red Carpet",
                         description: "Russian Pop",
                         image: "redCarpet-detailMainView"),
+            
             SearchModel(title: "Vinyl #2",
                         description: "Zivert",
-                        image: "Vinyl #2-detailMainView"),
+                        image: "vinyl #2-detailMainView"),
+            
+            SearchModel(title: "Millenium X",
+                        description: "Artik & Asti",
+                        image: "milleniumX-detailMainView"),
+            
         ]
         mainViewModel.append(contentsOf: newData)
     }
@@ -97,15 +103,19 @@ class SearchDetailViewModel: ObservableObject {
             SearchModel(title: "Millenium X",
                         description: "Artik & Asti",
                         image: "maleniumX-additionalAlboms"),
+            
             SearchModel(title: "Anima",
                         description: "The Limba",
                         image: "anima-additionalAlboms"),
+            
             SearchModel(title: "Sverhnova",
                         description: "Suzanna",
                         image: "sverhnova-additionalAlboms"),
+            
             SearchModel(title: "Vinyl #2",
                         description: "Zivert",
                         image: "vinyl#2-additionalAlboms"),
+            
             SearchModel(title: "Tribiut",
                         description: "Varioust Artists",
                         image: "tribiut-additionalAlboms"),

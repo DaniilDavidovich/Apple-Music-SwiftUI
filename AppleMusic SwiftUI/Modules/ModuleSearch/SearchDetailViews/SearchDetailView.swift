@@ -17,16 +17,29 @@ struct SearchDetailView: View {
     
     var body: some View {
         
-            ScrollView(.vertical) {
-                VStack(alignment: .leading) {
-                    MainView(data: searchDetailModel)
-                    AdditionalView(contstant: .playlist, data: searchDetailModel)
-                    AdditionalView(contstant: .alboms, data: searchDetailModel)
-                    AdditionalView(contstant: .hits, data: searchDetailModel)
-                }
+        ScrollView(.vertical) {
+            VStack(alignment: .leading) {
+                MainView(data: searchDetailModel)
+                AdditionalView(contstant: .playlist, data: searchDetailModel)
+                AdditionalView(contstant: .alboms, data: searchDetailModel)
+                AdditionalView(contstant: .hits, data: searchDetailModel)
+            }
         }
         .padding(.bottom, 80)
-        .navigationBarTitle("Me")
+        .toolbar {
+            ToolbarItem(placement: .navigationBarTrailing) {
+                
+                Menu {
+                    Button("Share Redactors") {
+                        
+                    }
+                } label: {
+                    Image(systemName: "ellipsis.circle")
+                        .foregroundColor(.red)
+                        .font(.system(size: 22))
+                }
+            }
+        }
     }
 }
 

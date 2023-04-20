@@ -26,6 +26,7 @@ struct MainView: View {
                             .foregroundColor(.gray)
                             .font(.footnote)
                             .textCase(.uppercase)
+                            .padding(.bottom, -7)
                         
                         Text(data.description ?? "error")
                             .font(.title2)
