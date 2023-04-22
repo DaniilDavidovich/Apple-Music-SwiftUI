@@ -44,6 +44,7 @@ struct StationsView: View {
             }
             .padding(.horizontal, 20)
         }
+
     }
 }
 

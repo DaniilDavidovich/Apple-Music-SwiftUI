@@ -10,38 +10,36 @@ import SwiftUI
 struct TabViewAppleMusic: View {
    
     var body: some View {
-        TabView {
-            
-            MediaView()
-            .tabItem {
-                Text(Constants.titleMedia)
-                Image(systemName: Images.iconMedia)
+        ZStack {
+            TabView {
+                
+                MediaView()
+                .tabItem {
+                    Text(Constants.titleMedia)
+                    Image(systemName: Images.iconMedia)
+                }
+                
+                RadioView()
+                    .tabItem {
+                        Text(Constants.titleRadio)
+                        Image(systemName: Images.iconRadio)
+                    }
+                
+                SearchView()
+                    .tabItem {
+                        Text(Constants.titleSearch)
+                        Image(systemName: Images.iconSearch)
+                    }
+            }
+            .accentColor(.red)
+            .onAppear() {
+                UITabBar.appearance().backgroundColor = UIColor.systemGray6
+
             }
             
-            RadioView()
-                .tabItem {
-                    Text(Constants.titleRadio)
-                    Image(systemName: Images.iconRadio)
-                }
-            
-            SearchView()
-                .tabItem {
-                    Text(Constants.titleSearch)
-                    Image(systemName: Images.iconSearch)
-                }
+            .safeAreaInset(edge: .bottom) {
+                PlayerView()
         }
-        .accentColor(.red)
-        .background()
-        .onAppear() {
-            UITabBar.appearance().backgroundColor = UIColor(
-                red: 0.972,
-                green: 0.972,
-                blue: 0.972,
-                alpha: 1
-            )
-        }
-        .safeAreaInset(edge: .bottom) {
-            PlayerView()
         }
     }
 }

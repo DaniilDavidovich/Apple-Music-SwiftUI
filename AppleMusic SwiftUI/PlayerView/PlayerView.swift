@@ -20,11 +20,7 @@ struct PlayerView: View {
             ZStack(alignment: .leading) {
                 
                 Rectangle()
-                    .fill(Color(
-                        red: 0.972,
-                        green: 0.972,
-                        blue: 0.972
-                    ))
+                    .fill(Color(UIColor.systemGray6))
 
                 HStack(spacing: 0) {
                     Image(Images.iconMusicPlug)
@@ -42,7 +38,7 @@ struct PlayerView: View {
                     } label: {
                         Image(systemName: Images.iconPlay)
                             .font(.title2)
-                            .foregroundColor(Color.black)
+                            .foregroundColor(Color(UIColor.darkGray))
                     }
                     
                     Button {
@@ -67,9 +63,9 @@ struct PlayerView: View {
 
             }
             
-//            .fullScreenCover(isPresented: $showModal) {
-//                PlayerModalView()
-//            }
+            .fullScreenCover(isPresented: $showModal) {
+                PlayerModalView()
+            }
             
         }
         Divider()

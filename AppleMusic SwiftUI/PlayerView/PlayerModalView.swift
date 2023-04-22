@@ -9,29 +9,33 @@ import SwiftUI
 
 struct PlayerModalView: View {
     var body: some View {
-        GeometryReader { geometry in
-            VStack(alignment: .center) {
-                Capsule()
-                    .fill(Color(UIColor.systemGray2))
-                    .frame(width: 40, height: 4)
-                    .opacity(1)
-                    .padding(.top)
-                
-                ImageView()
-                    .padding(.top, geometry.size.height < 667 ? 20 : 80)
-                
-                DescriptionAndSliderView()
-                    .padding(.top, geometry.size.height < 667 ? 20 : 80)
-                
-                PlayerButtonsView()
-                    .padding(.top, geometry.size.height < 667 ? 10 : 15)
-                
-                SliderVolueAndOtherViews()
-                    .padding(.top, geometry.size.height < 667 ? 10 : 20)
+        
+        VStack {
+            GeometryReader { geometry in
+                    VStack(alignment: .center) {
+                        Capsule()
+                            .fill(Color(UIColor.systemGray2))
+                            .frame(width: 40, height: 4)
+                            .opacity(1)
+                            .padding(.top)
+                        
+                        ImageView()
+                            .padding(.top, geometry.size.height < 667 ? 20 : 80)
+                        
+                        DescriptionAndSliderView()
+                            .padding(.top, geometry.size.height < 667 ? 20 : 80)
+                        
+                        PlayerButtonsView()
+                            .padding(.top, geometry.size.height < 667 ? 10 : 15)
+                        
+                        SliderVolueAndOtherViews()
+                            .padding(.top, geometry.size.height < 667 ? 10 : 20)
+                    }
+                    .frame(maxWidth: .infinity, maxHeight: .infinity)
+                   
             }
-            .frame(maxWidth: .infinity, maxHeight: .infinity)
-//            .padding(.bottom, geometry.size.width < 375 ? 30 : 60)
         }
+     
     }
 }
 
