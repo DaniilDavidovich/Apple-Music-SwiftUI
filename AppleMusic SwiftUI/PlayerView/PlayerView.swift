@@ -64,7 +64,12 @@ struct PlayerView: View {
             
             .sheet(isPresented: $showModal) {
                       PlayerModalView()
+
             }
+            
+//            .fullScreenCover(isPresented: $showModal) {
+//                PlayerModalView()
+//            }
             
         }
         Divider()

@@ -8,29 +8,34 @@
 import SwiftUI
 
 struct PlayerModalView: View {
-   
     var body: some View {
         GeometryReader { geometry in
-            VStack(alignment: .center, spacing: 10) {
-                Rectangle()
-                    .foregroundColor(Color(UIColor.systemGray5))
-                    .frame(width: 50, height: 10)
-                    .cornerRadius(10)
-                    
+            VStack(alignment: .center) {
+                Capsule()
+                    .fill(Color(UIColor.systemGray2))
+                    .frame(width: 40, height: 4)
+                    .opacity(1)
+                    .padding(.top)
                 
                 ImageView()
-                    .padding(.vertical, 100)
+                    .padding(.top, geometry.size.height < 667 ? 20 : 80)
                 
                 DescriptionAndSliderView()
+                    .padding(.top, geometry.size.height < 667 ? 20 : 80)
                 
                 PlayerButtonsView()
+                    .padding(.top, geometry.size.height < 667 ? 10 : 15)
                 
                 SliderVolueAndOtherViews()
+                    .padding(.top, geometry.size.height < 667 ? 10 : 20)
             }
-            .padding(.vertical, geometry.size.height * 0.01)
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
+//            .padding(.bottom, geometry.size.width < 375 ? 30 : 60)
         }
     }
 }
+
+
 
 struct PlayerModalView_Previews: PreviewProvider {
     static var previews: some View {

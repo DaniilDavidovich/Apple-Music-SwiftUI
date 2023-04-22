@@ -9,7 +9,6 @@ import SwiftUI
 
 struct DescriptionAndSliderView: View {
     
-    
     @State private var sliderValue = 0.0
         
     @State private var range = 0...4.32
