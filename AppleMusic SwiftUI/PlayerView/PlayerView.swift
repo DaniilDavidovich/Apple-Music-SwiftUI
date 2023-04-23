@@ -10,16 +10,17 @@ import SwiftUI
 
 
 struct PlayerView: View {
+    
+    @State private var showModal = false
+    
+    @Environment(\.presentationMode) var presentationMode
+
     var body: some View {
         VStack {
             ZStack(alignment: .leading) {
                 
                 Rectangle()
-                    .fill(Color(
-                        red: 0.972,
-                        green: 0.972,
-                        blue: 0.972
-                    ))
+                    .fill(Color(UIColor.systemGray6))
 
                 HStack(spacing: 0) {
                     Image(Images.iconMusicPlug)
@@ -37,7 +38,7 @@ struct PlayerView: View {
                     } label: {
                         Image(systemName: Images.iconPlay)
                             .font(.title2)
-                            .foregroundColor(Color.black)
+                            .foregroundColor(Color(UIColor.darkGray))
                     }
                     
                     Button {
@@ -53,12 +54,25 @@ struct PlayerView: View {
             }
             .frame(height: 70)
             .offset(y: -49)
-        }
+            .onTapGesture {
+                showModal = true
+            }
+            
+            .sheet(isPresented: $showModal) {
+                      PlayerModalView()
 
+            }
+            
+            .fullScreenCover(isPresented: $showModal) {
+                PlayerModalView()
+            }
+            
+        }
         Divider()
             .padding(.top, -15.0)
     }
 }
+
 
 struct PlayerWindow_Previews: PreviewProvider {
     static var previews: some View {

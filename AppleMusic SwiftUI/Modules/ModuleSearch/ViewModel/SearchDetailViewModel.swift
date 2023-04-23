@@ -38,7 +38,7 @@ class SearchDetailViewModel: ObservableObject {
             
             SearchModel(title: "Vinyl #2",
                         description: "Zivert",
-                        image: "vinyl #2-detailMainView"),
+                        image: "vinyl#2-detailMainView"),
             
             SearchModel(title: "Millenium X",
                         description: "Artik & Asti",

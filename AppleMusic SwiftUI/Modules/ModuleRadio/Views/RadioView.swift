@@ -34,6 +34,7 @@ struct RadioView: View {
                 }
                 .padding(.bottom, 80)
             }
+
             .navigationBarTitle(Titles.radion)
         }
     }
