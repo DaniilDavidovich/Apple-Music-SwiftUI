@@ -9,23 +9,31 @@ import SwiftUI
 
 struct SearchListView: View {
     
-    @State var data = ["me","me","me","me","me","me","me","me","me","me"]
-    
-    @State private var isOn = false
+    @ObservedObject var data = SearchDetailViewModel()
     
     var body: some View {
-        
         VStack {
-            
-            
-            
-            List {
-                ForEach(data, id: \.self) { data in
-                    Text(data)
-                        .padding(15)
+            List() {
+                ForEach(data.mainViewModel) { data in
+                    HStack {
+                        Image(data.image)
+                            .resizable()
+                            .frame(width: 60, height: 60)
+                            .cornerRadius(10)
+                            .scaledToFill()
+                            .padding(.horizontal, 0)
+                        VStack(alignment: .leading) {
+                            Text(data.description ?? "Error")
+                                .bold()
+                            Text(data.title)
+                                .foregroundColor(.gray)
+                                
+                        }
+                        .padding(.leading)
+                    }
                 }
-                
             }
+            .listStyle(.plain)
         }
     }
 }

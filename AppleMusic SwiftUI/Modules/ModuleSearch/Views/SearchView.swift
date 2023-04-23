@@ -37,7 +37,7 @@ struct SearchView: View {
                         .bold()
                     }
                     
-                    ListView()
+                    SearchListView()
                 }
             }
             .navigationBarTitle("Search")
