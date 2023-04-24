@@ -18,8 +18,10 @@ struct DescriptionAndSliderView: View {
             HStack {
                 
                 VStack(alignment: .leading) {
-                    Text("title")
-                    Text("Description")
+                    Text("Anima")
+                        .bold()
+                    Text("The Limba")
+                        .foregroundColor(.gray)
                 }
                 
                 Spacer()
@@ -32,10 +34,11 @@ struct DescriptionAndSliderView: View {
                         .font(.system(size: 27))
                 }
                 .padding(.top, 1)
-                .foregroundColor(.gray)
+                .foregroundColor(.red)
             }
             
             Slider(value: $sliderValue, in: range, step: 0.01)
+                .accentColor(.red)
             
             HStack {
                 Text("\(sliderValue, specifier: "%.2f")")

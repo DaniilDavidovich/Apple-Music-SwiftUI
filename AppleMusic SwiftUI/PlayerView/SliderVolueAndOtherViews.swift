@@ -16,6 +16,7 @@ struct SliderVolueAndOtherViews: View {
             HStack(spacing: 20) {
                 Image(systemName: "speaker.fill")
                 Slider(value: $value)
+                    .accentColor(.red)
                 Image(systemName: "speaker.wave.2.fill")
                
             
