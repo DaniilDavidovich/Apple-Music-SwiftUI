@@ -10,14 +10,14 @@ import SwiftUI
 struct SearchView: View {
     
     @State var flag = false
-    @State var searchText = String()
+    @State var searchText = ""
     
     var body: some View {
         NavigationView {
             VStack {
                 if !flag {
                     
-                    SearchTextFieldView(text: "")
+                    SearchTextFieldView(text: $searchText)
                         .onTapGesture {
                             flag = true
                         }
@@ -25,17 +25,7 @@ struct SearchView: View {
                     SearchCategoriesView()
                     
                 } else {
-                    HStack {
-                        SearchTextFieldView(text: searchText)
-                        Button("Cancel") {
-                            withAnimation {
-                                flag = false
-                            }
-                        }
-                        .padding(.trailing, 20)
-                        .foregroundColor(.red)
-                        .bold()
-                    }
+                    
                     SearchListView()
                 }
             }

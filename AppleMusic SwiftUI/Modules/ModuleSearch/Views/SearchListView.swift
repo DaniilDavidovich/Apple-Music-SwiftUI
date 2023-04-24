@@ -9,25 +9,52 @@ import SwiftUI
 
 struct SearchListView: View {
     
+    
     @ObservedObject var dataViewModel = SearchDetailViewModel()
     @State private var selectedSide = 0
+    @State var text = ""
     
-    
-    var body: some View {
+    var filteredData: [SearchModel] {
         
         let data = (
             dataViewModel.hitsAdditionalViewModel +
             dataViewModel.playlistAdditionalViewModel +
             dataViewModel.albomsAdditionalViewModel +
-            dataViewModel.mainViewModel)
+            dataViewModel.mainViewModel
+        )
+        
+        if text.isEmpty {
+            return data
+        } else {
+            return data.filter {"\($0)"
+                .lowercased()
+                .contains(
+                    text.lowercased()
+                )
+            }
+        }
+    }
+    
+    
+    var body: some View {
         
         VStack {
+            HStack {
+                SearchTextFieldView(text: $text)
+                Button("Cancel") {
+                    withAnimation {
+//                        flag = false
+                    }
+                }
+                .padding(.trailing, 20)
+                .foregroundColor(.red)
+                .bold()
+            }
             
             SearchPickerView(selectedSide: $selectedSide)
                 .padding(.horizontal, 20)
             if selectedSide == 0 {
-                List() {
-                    ForEach(data) { item in
+                List(filteredData) { item in
                         HStack {
                             Image(item.image)
                                 .resizable()
@@ -44,7 +71,7 @@ struct SearchListView: View {
                             .padding(.leading)
                         }
                     }
-                }
+                
                 .listStyle(.plain)
                 .padding(.bottom, 0)
             } else {
@@ -57,8 +84,8 @@ struct SearchListView: View {
     }
 }
 
-struct SearchListView_Previews: PreviewProvider {
-    static var previews: some View {
-        SearchListView()
-    }
-}
+//struct SearchListView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        SearchListView()
+//    }
+//}
