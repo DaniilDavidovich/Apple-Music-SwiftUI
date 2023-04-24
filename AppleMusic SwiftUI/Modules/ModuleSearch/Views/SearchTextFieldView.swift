@@ -36,8 +36,3 @@ struct SearchTextFieldView: View {
     }
 }
 
-//struct TextFieldView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        SearchTextFieldView()
-//    }
-//}

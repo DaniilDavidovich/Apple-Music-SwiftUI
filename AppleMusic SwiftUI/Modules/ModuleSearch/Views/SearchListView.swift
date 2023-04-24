@@ -9,6 +9,7 @@ import SwiftUI
 
 struct SearchListView: View {
     
+    
     @ObservedObject var dataViewModel = SearchDetailViewModel()
     @State private var selectedSide = 0
     @State var text = ""
@@ -25,7 +26,12 @@ struct SearchListView: View {
         if text.isEmpty {
             return data
         } else {
-            return data.filter { $0.title.localizedCaseInsensitiveContains(text) }
+            return data.filter {"\($0)"
+                .lowercased()
+                .contains(
+                    text.lowercased()
+                )
+            }
         }
     }
     
