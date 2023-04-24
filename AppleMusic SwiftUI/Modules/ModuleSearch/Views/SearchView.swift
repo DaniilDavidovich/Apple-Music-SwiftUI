@@ -11,6 +11,8 @@ struct SearchView: View {
     
     @State var flag = false
     
+   
+    
     var body: some View {
         NavigationView {
             VStack {
@@ -24,7 +26,6 @@ struct SearchView: View {
                     SearchCategoriesView()
                     
                 } else {
-                    
                     HStack {
                         SearchTextFieldView()
                         Button("Cancel") {
