@@ -9,7 +9,7 @@ import SwiftUI
 
 struct SearchTextFieldView: View {
     
-    @State var text: String
+    @Binding var text: String
     
     var body: some View {
         VStack {
