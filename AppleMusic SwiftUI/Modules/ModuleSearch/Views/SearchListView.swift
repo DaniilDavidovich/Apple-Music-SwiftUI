@@ -9,27 +9,36 @@ import SwiftUI
 
 struct SearchListView: View {
     
-    @ObservedObject var data = SearchDetailViewModel()
+    @ObservedObject var dataViewModel = SearchDetailViewModel()
     @State private var selectedSide = 0
     
+    
     var body: some View {
+        
+        let data = (
+            dataViewModel.hitsAdditionalViewModel +
+            dataViewModel.playlistAdditionalViewModel +
+            dataViewModel.albomsAdditionalViewModel +
+            dataViewModel.mainViewModel)
+        
         VStack {
+            
             SearchPickerView(selectedSide: $selectedSide)
                 .padding(.horizontal, 20)
             if selectedSide == 0 {
                 List() {
-                    ForEach(data.mainViewModel) { data in
+                    ForEach(data) { item in
                         HStack {
-                            Image(data.image)
+                            Image(item.image)
                                 .resizable()
                                 .frame(width: 60, height: 60)
                                 .cornerRadius(10)
                                 .scaledToFill()
                                 .padding(.horizontal, 0)
                             VStack(alignment: .leading) {
-                                Text(data.description ?? "Error")
+                                Text(item.description ?? "Error")
                                     .bold()
-                                Text(data.title)
+                                Text(item.title)
                                     .foregroundColor(.gray)
                             }
                             .padding(.leading)
@@ -37,6 +46,7 @@ struct SearchListView: View {
                     }
                 }
                 .listStyle(.plain)
+                .padding(.bottom, 0)
             } else {
                 Text("Fatall Error Loading View")
                     .padding(.top, 100)

@@ -9,7 +9,8 @@ import SwiftUI
 
 struct SearchTextFieldView: View {
     
-    @State var text: String = ""
+    @State var text: String
+    
     var body: some View {
         VStack {
                TextField("Artists, songs, texts and more...", text: $text)
@@ -35,8 +36,8 @@ struct SearchTextFieldView: View {
     }
 }
 
-struct TextFieldView_Previews: PreviewProvider {
-    static var previews: some View {
-        SearchTextFieldView()
-    }
-}
+//struct TextFieldView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        SearchTextFieldView()
+//    }
+//}
