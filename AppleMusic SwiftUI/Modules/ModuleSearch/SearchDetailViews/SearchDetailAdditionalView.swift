@@ -13,7 +13,7 @@ struct SearchDetailAdditionalView: View {
     // MARK: - Properties
     
     var contstant: Flags
-    var data: SearchDetailViewModel
+    var data: [SearchModel]
     
     @State var rows = [
         GridItem(.flexible())
@@ -33,7 +33,7 @@ struct SearchDetailAdditionalView: View {
         if contstant == .playlist {
             VStack(alignment: .leading) {
                 Button {
-                    // Clear
+                    // Clear Action
                 } label: {
                     HStack {
                         Text(Titles.playlists)
@@ -51,7 +51,7 @@ struct SearchDetailAdditionalView: View {
                 
                 ScrollView(.horizontal, showsIndicators: false) {
                     LazyHGrid(rows: rows) {
-                        ForEach(data.playlistAdditionalViewModel) { data in
+                        ForEach(data) { data in
                             VStack(alignment: .leading) {
                                 Image(data.image)
                                     .resizable()
@@ -73,7 +73,7 @@ struct SearchDetailAdditionalView: View {
         } else if contstant == .alboms {
             VStack(alignment: .leading) {
                 Button {
-                    // Clear
+                    // Clear Action
                 } label: {
                     HStack {
                         Text(Titles.playlists)
@@ -92,7 +92,7 @@ struct SearchDetailAdditionalView: View {
                 ScrollView(.horizontal, showsIndicators: false) {
                     LazyHGrid(rows: rows) {
                         
-                        ForEach(data.albomsAdditionalViewModel) { data in
+                        ForEach(data) { data in
                             VStack(alignment: .leading) {
                                 Image(data.image)
                                     .resizable()
@@ -115,7 +115,7 @@ struct SearchDetailAdditionalView: View {
         } else if contstant == .hits {
             VStack(alignment: .leading) {
                 Button {
-                    // Clear
+                    // Clear Action
                 } label: {
                     HStack {
                         Text(Titles.playlists)
@@ -133,7 +133,7 @@ struct SearchDetailAdditionalView: View {
                 
                 ScrollView(.horizontal, showsIndicators: false) {
                     LazyHGrid(rows: rows) {
-                        ForEach(data.hitsAdditionalViewModel) { data in
+                        ForEach(data) { data in
                             VStack(alignment: .leading) {
                                 Image(data.image)
                                     .resizable()
@@ -170,6 +170,6 @@ fileprivate enum Images {
 
 struct SearchDetailAdditionalView_Previews: PreviewProvider {
     static var previews: some View {
-        SearchDetailAdditionalView(contstant: .playlist, data: SearchDetailViewModel())
+        SearchDetailAdditionalView(contstant: .playlist, data: [SearchModel]())
     }
 }

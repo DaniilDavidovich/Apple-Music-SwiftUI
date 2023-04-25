@@ -12,7 +12,7 @@ struct SearchDetailMainView: View {
     
     // MARK: - Properties
     
-    var data: SearchDetailViewModel
+    var data: [SearchModel]
     
     @State var rows = [
         GridItem(.flexible())
@@ -23,7 +23,7 @@ struct SearchDetailMainView: View {
     var body: some View {
         ScrollView(.horizontal, showsIndicators: false) {
             LazyHGrid(rows: rows, content: {
-                ForEach(data.mainViewModel) { data in
+                ForEach(data) { data in
                     VStack(alignment: .leading) {
                         Text(Constants.textTitle)
                             .foregroundColor(.gray)
@@ -59,8 +59,3 @@ fileprivate enum Constants {
     static let error = "Error"
 }
 
-struct SearchDetailMainView_Previews: PreviewProvider {
-    static var previews: some View {
-        SearchDetailMainView(data: SearchDetailViewModel())
-    }
-}

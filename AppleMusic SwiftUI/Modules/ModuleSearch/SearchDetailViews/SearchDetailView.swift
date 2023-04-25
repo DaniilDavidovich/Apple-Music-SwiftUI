@@ -22,21 +22,22 @@ struct SearchDetailView: View {
     // MARK: - Body
     
     var body: some View {
+        
         ScrollView(.vertical) {
             VStack(alignment: .leading) {
-                SearchDetailMainView(data: searchDetailModel)
+               SearchDetailMainView(data: searchDetailModel.mainViewModel)
                 
                 SearchDetailAdditionalView(
                     contstant: .playlist,
-                    data: searchDetailModel
+                    data: searchDetailModel.playlistAdditionalViewModel
                 )
                 SearchDetailAdditionalView(
                     contstant: .alboms,
-                    data: searchDetailModel
+                    data: searchDetailModel.albomsAdditionalViewModel
                 )
                 SearchDetailAdditionalView(
                     contstant: .hits,
-                    data: searchDetailModel
+                    data: searchDetailModel.hitsAdditionalViewModel
                 )
             }
         }

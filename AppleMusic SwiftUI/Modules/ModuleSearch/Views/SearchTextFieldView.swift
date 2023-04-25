@@ -18,17 +18,16 @@ struct SearchTextFieldView: View {
     
     var body: some View {
         VStack {
-            TextField("Artists, songs, texts and more...", text: $text)
+            TextField(Constant.placeholder, text: $text)
                 .padding(.leading, 30)
                 .frame(height: 12)
                 .padding()
                 .background(Color(UIColor.systemGray5))
                 .cornerRadius(14)
                 .padding(.horizontal, 20)
-                .foregroundColor(.gray)
                 .overlay(
                     HStack {
-                        Image(systemName:"magnifyingglass")
+                        Image(systemName: Constant.image)
                             .resizable()
                             .scaledToFit()
                             .frame(width: 24, height: 24)
@@ -40,5 +39,10 @@ struct SearchTextFieldView: View {
                 )
         }
     }
+}
+
+fileprivate enum Constant {
+    static let placeholder = "Artists, songs, texts and more..."
+    static let image = "magnifyingglass"
 }
 
