@@ -10,23 +10,22 @@ import SwiftUI
 
 struct PlayerButtonsView: View {
     var body: some View {
-        
         HStack(spacing: 80) {
             Button {
-                // Clear
+                // Clear Active
             } label: {
                 Image(systemName: Images.backward)
             }
             
             Button {
-                // Clear
+                // Clear Active
             } label: {
                 Image(systemName: Images.play)
                     .font(.system(size: 45))
             }
             
             Button {
-                // Clear
+                // Clear Active
             } label: {
                 Image(systemName: Images.forward)
             }

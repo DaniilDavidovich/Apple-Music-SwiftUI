@@ -9,8 +9,11 @@ import SwiftUI
 
 
 struct PlayerImageView: View {
+    
+    var image: String?
+    
     var body: some View {
-        Image("anima-additionalAlboms")
+        Image(image ?? "Music")
             .resizable()
             .scaledToFill()
             .frame(width: 250, height: 250)

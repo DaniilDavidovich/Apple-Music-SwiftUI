@@ -14,6 +14,8 @@ struct DescriptionAndSliderView: View {
     
     @State private var sliderValue = 0.0
     @State private var range = 0...4.32
+    var title: String?
+    var description: String?
     
     // MARK: - Body
     
@@ -22,19 +24,19 @@ struct DescriptionAndSliderView: View {
             HStack {
                 
                 VStack(alignment: .leading) {
-                    Text(Texts.title)
+                    Text(title ?? Constants.error)
                         .bold()
-                    Text(Texts.description)
+                    Text(description ?? Constants.error)
                         .foregroundColor(.gray)
                 }
                 Spacer()
                 
                 Menu {
-                    Button(Texts.share) {
-                        //
+                    Button(Constants.share) {
+                        // Clear Active
                     }
                 } label: {
-                    Image(systemName: Images.circle)
+                    Image(systemName: Constants.circle)
                         .font(.system(size: 27))
                 }
                 .padding(.top, 1)
@@ -55,18 +57,14 @@ struct DescriptionAndSliderView: View {
     }
 }
 
-fileprivate enum Images {
+fileprivate enum Constants {
     static let circle = "ellipsis.circle"
-}
-
-fileprivate enum Texts {
-    static let title = "Anima"
-    static let description = "The Limba"
     static let share = "Share Music"
+    static let error = "Error"
 }
 
-struct DescriptionAndSliderView_Previews: PreviewProvider {
-    static var previews: some View {
-        DescriptionAndSliderView()
-    }
-}
+//struct DescriptionAndSliderView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        DescriptionAndSliderView(title: "1", description: "2")
+//    }
+//}

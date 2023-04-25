@@ -9,6 +9,13 @@ import SwiftUI
 
 
 struct PlayerModalView: View {
+    
+    // MARK: - Properties
+    
+    var model: SearchModel?
+    
+    // MARK: - Body
+    
     var body: some View {
         VStack {
             GeometryReader { geometry in
@@ -19,10 +26,11 @@ struct PlayerModalView: View {
                         .opacity(1)
                         .padding(.top)
                     
-                    PlayerImageView()
+                    PlayerImageView(
+                        image: model?.image ?? "Error")
                         .padding(.top, geometry.size.height < 667 ? 20 : 80)
                     
-                    DescriptionAndSliderView()
+                    DescriptionAndSliderView(title: model?.title, description: model?.description ?? "Error")
                         .padding(.top, geometry.size.height < 667 ? 20 : 80)
                     
                     PlayerButtonsView()
@@ -34,12 +42,5 @@ struct PlayerModalView: View {
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
             }
         }
-    }
-}
-
-
-struct PlayerModalView_Previews: PreviewProvider {
-    static var previews: some View {
-        PlayerModalView()
     }
 }

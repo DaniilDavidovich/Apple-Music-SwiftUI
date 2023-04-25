@@ -12,6 +12,11 @@ struct PlayerView: View {
     
     // MARK: - Properties
     
+    @State var playerData = SearchModel(
+        title: Song.title,
+        description: Song.description,
+        image: Song.image)
+    
     @State private var showModal = false
     @Environment(\.presentationMode) var presentationMode
     
@@ -31,7 +36,7 @@ struct PlayerView: View {
                         .cornerRadius(5)
                         .shadow(color: .gray, radius: 4)
                     
-                    Text(Constants.title)
+                    Text(Song.title)
                         .padding(.horizontal, 15)
                     
                     Spacer(minLength: 0)
@@ -61,10 +66,7 @@ struct PlayerView: View {
                 showModal = true
             }
             .sheet(isPresented: $showModal) {
-                PlayerModalView()
-            }
-            .fullScreenCover(isPresented: $showModal) {
-                PlayerModalView()
+                PlayerModalView(model: playerData)
             }
         }
         
@@ -73,12 +75,14 @@ struct PlayerView: View {
     }
 }
 
-fileprivate enum Constants {
-    static let title = "Not Playing"
+fileprivate enum Song {
+    static let title = "Dmitry Dorodniy"
+    static let description = "Drink Cocktail And Relax"
+    static let image = "Song"
 }
 
 fileprivate enum Images {
-    static let iconMusicPlug = "Music"
+    static let iconMusicPlug = "Song"
     static let iconPlay = "play.fill"
     static let iconForward = "forward.fill"
 }
