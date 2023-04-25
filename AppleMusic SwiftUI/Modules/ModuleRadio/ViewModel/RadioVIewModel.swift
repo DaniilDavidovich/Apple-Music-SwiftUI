@@ -7,15 +7,22 @@
 
 import Foundation
 
+
 class RadioViewModel: ObservableObject {
-   
+    
+    // MARK: - Properties
+    
     @Published var dataShows = [RadioModel]()
     @Published var dataStations = [RadioModel]()
+    
+    // MARK: - Init
     
     init() {
         newDataShows()
         newDataStations()
     }
+    
+    // MARK: - Functions
     
     func newDataShows() {
         let newData = [
@@ -62,7 +69,6 @@ class RadioViewModel: ObservableObject {
                 image: "audiosystem-radio"
             )
         ]
-        
         dataShows.append(contentsOf: newData)
     }
     

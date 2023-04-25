@@ -7,18 +7,19 @@
 
 import SwiftUI
 
+
 struct MediaView: View {
     
-    @State var editMode: EditMode = .inactive
+    // MARK: - Properties
     
+    @State private var editMode: EditMode = .inactive
     @State private var isEditing = false
     
+    // MARK: - Body
+    
     var body: some View {
-        
         NavigationView {
-            
             VStack {
-                
                 if isEditing {
                     MediaList()
                         .padding()
@@ -26,29 +27,27 @@ struct MediaView: View {
                     MediaTitle()
                 }
             }
+            .navigationBarTitle(Constants.navTitle)
             
-            .navigationBarTitle("Media Library")
-            
-            .navigationBarItems(
-                trailing:
-                    Button(action: {
-                    isEditing.toggle()
-                    editMode = isEditing ? .active : .inactive
-                })
-                {
-                    Text(isEditing ? "Done" : "Edit")
-                }
-                
-                .foregroundColor(.red)
+            .navigationBarItems(trailing:
+                                    Button(action: {
+                isEditing.toggle()
+                editMode = isEditing ? .active : .inactive
+            }) {
+                Text(isEditing ? Constants.done : Constants.edit)
+                    .foregroundColor(.red)
+            }
             )
-            
             .environment(\.editMode, $editMode)
         }
     }
 }
 
-
-
+fileprivate enum Constants {
+    static let navTitle = "Media Library"
+    static let done = "Done"
+    static let edit = "Edit"
+}
 
 struct MediaView_Previews: PreviewProvider {
     static var previews: some View {

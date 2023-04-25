@@ -7,30 +7,38 @@
 
 import SwiftUI
 
+
 struct PlayerButtonsView: View {
     var body: some View {
         HStack(spacing: 80) {
             Button {
-                //
+                // Clear Active
             } label: {
-                Image(systemName: "backward.fill")
+                Image(systemName: Images.backward)
             }
+            
             Button {
-                //
+                // Clear Active
             } label: {
-                Image(systemName: "play.fill")
+                Image(systemName: Images.play)
                     .font(.system(size: 45))
             }
+            
             Button {
-                //
+                // Clear Active
             } label: {
-                Image(systemName: "forward.fill")
+                Image(systemName: Images.forward)
             }
         }
         .foregroundColor(Color(UIColor.systemGray3))
         .font(.largeTitle)
-        
     }
+}
+
+fileprivate enum Images {
+    static let backward = "backward.fill"
+    static let play = "play.fill"
+    static let forward = "forward.fill"
 }
 
 struct PlayerButtonsView_Previews: PreviewProvider {

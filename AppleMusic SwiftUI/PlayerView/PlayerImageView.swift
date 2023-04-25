@@ -7,19 +7,17 @@
 
 import SwiftUI
 
-struct ImageView: View {
+
+struct PlayerImageView: View {
+    
+    var image: String?
+    
     var body: some View {
-        Image("anima-additionalAlboms")
+        Image(image ?? "Music")
             .resizable()
             .scaledToFill()
             .frame(width: 250, height: 250)
             .cornerRadius(15)
             .shadow(color: Color(UIColor.systemGray), radius: 8, y: 4)
-    }
-}
-
-struct ImageView_Previews: PreviewProvider {
-    static var previews: some View {
-        ImageView()
     }
 }

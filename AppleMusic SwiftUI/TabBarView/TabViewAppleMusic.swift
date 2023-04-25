@@ -7,17 +7,17 @@
 
 import SwiftUI
 
+
 struct TabViewAppleMusic: View {
-   
+    
     var body: some View {
         ZStack {
             TabView {
-                
                 MediaView()
-                .tabItem {
-                    Text(Constants.titleMedia)
-                    Image(systemName: Images.iconMedia)
-                }
+                    .tabItem {
+                        Text(Constants.titleMedia)
+                        Image(systemName: Images.iconMedia)
+                    }
                 
                 RadioView()
                     .tabItem {
@@ -34,12 +34,10 @@ struct TabViewAppleMusic: View {
             .accentColor(.red)
             .onAppear() {
                 UITabBar.appearance().backgroundColor = UIColor.systemGray6
-
             }
-            
             .safeAreaInset(edge: .bottom) {
                 PlayerView()
-        }
+            }
         }
     }
 }
@@ -61,3 +59,7 @@ fileprivate enum Images {
     static let iconRadio = "dot.radiowaves.left.and.right"
     static let iconSearch = "magnifyingglass"
 }
+
+
+
+

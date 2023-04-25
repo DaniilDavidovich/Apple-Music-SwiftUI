@@ -7,7 +7,10 @@
 
 import SwiftUI
 
+
 struct SearchCategoriesView: View {
+    
+    // MARK: - Properties
     
     @ObservedObject var model = SearchViewModel()
     
@@ -16,10 +19,11 @@ struct SearchCategoriesView: View {
         GridItem(.flexible())
     ]
     
+    // MARK: - Body
+    
     var body: some View {
         ScrollView(.vertical, showsIndicators: false) {
             VStack(alignment: .leading) {
-                
                 Text("Search on categories")
                     .frame(maxWidth: .infinity, alignment: .leading)
                     .font(.title2)
@@ -29,15 +33,13 @@ struct SearchCategoriesView: View {
                     .padding(.top)
                 
                 LazyVGrid(columns: item, alignment: .leading, spacing: 3) {
-                    
                     ForEach(model.categoriesModel) { item in
                         NavigationLink(destination: SearchDetailView()) {
-                            
                             VStack(alignment: .leading) {
                                 Image(item.image)
                                     .resizable()
                                     .scaledToFill()
-                                    .frame(width: UIScreen.main.bounds.width / 2 - 20, height: 125) // настройка ширины
+                                    .frame(width: UIScreen.main.bounds.width / 2 - 20, height: 125)
                                     .cornerRadius(10)
                                 
                                 Text(item.title)
@@ -45,21 +47,17 @@ struct SearchCategoriesView: View {
                                     .foregroundColor(Color.white)
                                     .padding(.leading)
                                     .bold()
-                                
                             }
                             .padding(.vertical, -2)
                             .padding(.horizontal, 2)
                         }
-                        
                     }
-                    
                 }
                 .padding()
             }
         }
     }
 }
-
 
 struct CategoriesView_Previews: PreviewProvider {
     static var previews: some View {

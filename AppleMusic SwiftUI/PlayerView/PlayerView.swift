@@ -8,20 +8,26 @@
 import SwiftUI
 
 
-
 struct PlayerView: View {
     
-    @State private var showModal = false
+    // MARK: - Properties
     
+    @State var playerData = SearchModel(
+        title: Song.title,
+        description: Song.description,
+        image: Song.image)
+    
+    @State private var showModal = false
     @Environment(\.presentationMode) var presentationMode
-
+    
+    // MARK: - Body
+    
     var body: some View {
         VStack {
             ZStack(alignment: .leading) {
-                
                 Rectangle()
                     .fill(Color(UIColor.systemGray6))
-
+                
                 HStack(spacing: 0) {
                     Image(Images.iconMusicPlug)
                         .resizable()
@@ -29,12 +35,14 @@ struct PlayerView: View {
                         .frame(width: 52, height: 52)
                         .cornerRadius(5)
                         .shadow(color: .gray, radius: 4)
-                    Text(Constants.title)
+                    
+                    Text(Song.title)
                         .padding(.horizontal, 15)
+                    
                     Spacer(minLength: 0)
                     
                     Button {
-                        // clear
+                        // Clear action
                     } label: {
                         Image(systemName: Images.iconPlay)
                             .font(.title2)
@@ -42,7 +50,7 @@ struct PlayerView: View {
                     }
                     
                     Button {
-                       // clear
+                        // Clear action
                     } label: {
                         Image(systemName: Images.iconForward)
                             .font(.title2)
@@ -57,35 +65,30 @@ struct PlayerView: View {
             .onTapGesture {
                 showModal = true
             }
-            
             .sheet(isPresented: $showModal) {
-                      PlayerModalView()
-
+                PlayerModalView(model: playerData)
             }
-            
-            .fullScreenCover(isPresented: $showModal) {
-                PlayerModalView()
-            }
-            
         }
+        
         Divider()
             .padding(.top, -15.0)
     }
 }
 
+fileprivate enum Song {
+    static let title = "Dmitry Dorodniy"
+    static let description = "Drink Cocktail And Relax"
+    static let image = "Song"
+}
+
+fileprivate enum Images {
+    static let iconMusicPlug = "Song"
+    static let iconPlay = "play.fill"
+    static let iconForward = "forward.fill"
+}
 
 struct PlayerWindow_Previews: PreviewProvider {
     static var previews: some View {
         PlayerView()
     }
-}
-
-fileprivate enum Constants {
-    static let title = "Not Playing"
-}
-
-fileprivate enum Images {
-    static let iconMusicPlug = "Music"
-    static let iconPlay = "play.fill"
-    static let iconForward = "forward.fill"
 }

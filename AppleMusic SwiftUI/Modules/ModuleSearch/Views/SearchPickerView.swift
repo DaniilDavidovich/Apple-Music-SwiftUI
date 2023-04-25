@@ -7,21 +7,31 @@
 
 import SwiftUI
 
+
 struct SearchPickerView: View {
     
+    // MARK: - Properties
+    
     @Binding var selectedSide: Int
-    var tab = ["Apple Music", "Ваша медиатека"]
-
+    let titleSide = [titlesSide.appleMusic, titlesSide.yourMediateka ]
+    
+    // MARK: - Body
+    
     var body: some View {
         VStack {
             Picker("", selection: $selectedSide) {
                 ForEach(0..<2) { index in
-                    Text(tab[index])
+                    Text(titleSide[index])
                 }
             }
             .pickerStyle(SegmentedPickerStyle())
         }
     }
+}
+
+fileprivate enum titlesSide {
+    static let appleMusic = "Apple Music"
+    static let yourMediateka = "Your Media Library"
 }
 
 
