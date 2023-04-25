@@ -7,11 +7,19 @@
 
 import SwiftUI
 
-struct AdditionalView: View {
+
+struct SearchDetailAdditionalView: View {
+    
+    // MARK: - Properties
+    
+    var contstant: Flags
+    var data: SearchDetailViewModel
     
     @State var rows = [
         GridItem(.flexible())
     ]
+    
+    // MARK: - Enum
     
     enum Flags: String {
         case playlist = "Playlists"
@@ -19,15 +27,13 @@ struct AdditionalView: View {
         case hits = "Hits"
     }
     
-    var contstant: Flags
-    
-    var data: SearchDetailViewModel
+    // MARK: - Body
     
     var body: some View {
         if contstant == .playlist {
             VStack(alignment: .leading) {
                 Button {
-                    //
+                    // Clear
                 } label: {
                     HStack {
                         Text(Titles.playlists)
@@ -35,41 +41,39 @@ struct AdditionalView: View {
                             .bold()
                             .padding(.leading, 20)
                             .foregroundColor(.black)
-                        Image(systemName: "control")
+                        
+                        Image(systemName: Images.control)
                             .rotationEffect(.init(degrees: 90))
                             .foregroundColor(.gray)
                             .bold()
                     }
                 }
-
+                
                 ScrollView(.horizontal, showsIndicators: false) {
                     LazyHGrid(rows: rows) {
-                        
-                        
                         ForEach(data.playlistAdditionalViewModel) { data in
                             VStack(alignment: .leading) {
                                 Image(data.image)
                                     .resizable()
                                     .cornerRadius(15)
                                     .frame(width: 180, height: 180)
+                                
                                 Text(data.title)
                                     .lineLimit(1)
-                                Text(data.description ?? "Error")
+                                
+                                Text(data.description ?? Titles.error)
                                     .foregroundColor(Color(UIColor.systemGray))
                             }
                             .padding(.horizontal, 3)
-                            
                         }
                     }
                     .padding(.horizontal, 20)
                 }
-                
             }
-            
         } else if contstant == .alboms {
             VStack(alignment: .leading) {
                 Button {
-                    //
+                    // Clear
                 } label: {
                     HStack {
                         Text(Titles.playlists)
@@ -77,12 +81,14 @@ struct AdditionalView: View {
                             .bold()
                             .padding(.leading, 20)
                             .foregroundColor(.black)
-                        Image(systemName: "control")
+                        
+                        Image(systemName: Images.control)
                             .rotationEffect(.init(degrees: 90))
                             .foregroundColor(.gray)
                             .bold()
                     }
                 }
+                
                 ScrollView(.horizontal, showsIndicators: false) {
                     LazyHGrid(rows: rows) {
                         
@@ -92,24 +98,24 @@ struct AdditionalView: View {
                                     .resizable()
                                     .cornerRadius(15)
                                     .frame(width: 180, height: 180)
+                                
                                 Text(data.title)
                                     .lineLimit(1)
-                                Text(data.description ?? "Error")
+                                
+                                Text(data.description ?? Titles.error)
                                     .foregroundColor(Color(UIColor.systemGray))
                             }
-                            .padding(.horizontal, 3)   
+                            .padding(.horizontal, 3)
                         }
                     }
                     .padding(.horizontal, 20)
                 }
                 
             }
-            
         } else if contstant == .hits {
-            
             VStack(alignment: .leading) {
                 Button {
-                    //
+                    // Clear
                 } label: {
                     HStack {
                         Text(Titles.playlists)
@@ -117,48 +123,53 @@ struct AdditionalView: View {
                             .bold()
                             .padding(.leading, 20)
                             .foregroundColor(.black)
-                        Image(systemName: "control")
+                        
+                        Image(systemName: Images.control)
                             .rotationEffect(.init(degrees: 90))
                             .foregroundColor(.gray)
                             .bold()
                     }
                 }
+                
                 ScrollView(.horizontal, showsIndicators: false) {
                     LazyHGrid(rows: rows) {
-                        
-                        
                         ForEach(data.hitsAdditionalViewModel) { data in
                             VStack(alignment: .leading) {
                                 Image(data.image)
                                     .resizable()
-                                    
+                                
                                     .cornerRadius(15)
                                     .frame(width: 180, height: 180)
+                                
                                 Text(data.title)
                                     .lineLimit(1)
-                                Text(data.description ?? "Error")
+                                
+                                Text(data.description ?? Titles.error)
                                     .foregroundColor(Color(UIColor.systemGray))
                             }
                             .padding(.horizontal, 3)
-                            
                         }
                     }
                     .padding(.horizontal, 20)
                 }
-                
             }
         }
     }
-    
-    fileprivate enum Titles {
-        static let hits = "Hits"
-        static let alboms = "Alboms"
-        static let playlists = "Playlists"
-    }
 }
 
-struct AdditionalView_Previews: PreviewProvider {
+fileprivate enum Titles {
+    static let hits = "Hits"
+    static let alboms = "Alboms"
+    static let playlists = "Playlists"
+    static let error = "Error"
+}
+
+fileprivate enum Images {
+    static let control = "control"
+}
+
+struct SearchDetailAdditionalView_Previews: PreviewProvider {
     static var previews: some View {
-        AdditionalView(contstant: .playlist, data: SearchDetailViewModel())
+        SearchDetailAdditionalView(contstant: .playlist, data: SearchDetailViewModel())
     }
 }

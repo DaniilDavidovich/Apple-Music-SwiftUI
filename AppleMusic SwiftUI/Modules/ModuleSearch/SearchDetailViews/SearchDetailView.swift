@@ -7,48 +7,61 @@
 
 import SwiftUI
 
+
 struct SearchDetailView: View {
+    
+    // MARK: - Properties
+    
+    @ObservedObject var searchDetailModel = SearchDetailViewModel()
+    @Environment(\.presentationMode)  var presentationMode
     
     @State var grid = [
         GridItem(.flexible())
     ]
     
-    @ObservedObject var searchDetailModel = SearchDetailViewModel()
-    @Environment(\.presentationMode)  var presentationMode
+    // MARK: - Body
     
     var body: some View {
         ScrollView(.vertical) {
             VStack(alignment: .leading) {
-                MainView(data: searchDetailModel)
-                AdditionalView(contstant: .playlist, data: searchDetailModel)
-                AdditionalView(contstant: .alboms, data: searchDetailModel)
-                AdditionalView(contstant: .hits, data: searchDetailModel)
+                SearchDetailMainView(data: searchDetailModel)
+                
+                SearchDetailAdditionalView(
+                    contstant: .playlist,
+                    data: searchDetailModel
+                )
+                SearchDetailAdditionalView(
+                    contstant: .alboms,
+                    data: searchDetailModel
+                )
+                SearchDetailAdditionalView(
+                    contstant: .hits,
+                    data: searchDetailModel
+                )
             }
         }
         .padding(.bottom, 80)
-        .navigationBarTitle("Pop in Russia")
+        .navigationBarTitle(Titles.navTitle)
         .navigationBarBackButtonHidden(true)
         .toolbar {
-            
             ToolbarItem(placement: .navigationBarLeading) {
                 Button(action: {
-                        presentationMode.wrappedValue.dismiss()
-                    }) {
-                        HStack {
-                            Image(systemName: "chevron.backward")
-                                .foregroundColor(Color.red)
-                        }
+                    presentationMode.wrappedValue.dismiss()
+                }) {
+                    HStack {
+                        Image(systemName: Images.chevron)
+                            .foregroundColor(Color.red)
                     }
+                }
             }
             
             ToolbarItem(placement: .navigationBarTrailing) {
-                
                 Menu {
-                    Button("Share Redactors") {
-                        //
+                    Button(Titles.buttonTitle) {
+                        // Clear
                     }
                 } label: {
-                    Image(systemName: "ellipsis.circle")
+                    Image(systemName: Images.ellipsis)
                         .foregroundColor(.red)
                         .font(.system(size: 22))
                 }
@@ -57,6 +70,15 @@ struct SearchDetailView: View {
     }
 }
 
+fileprivate enum Titles {
+    static let navTitle = "Pop in Russia"
+    static let buttonTitle = "Share Redactors"
+}
+
+fileprivate enum Images {
+    static let chevron = "chevron.backward"
+    static let ellipsis = "ellipsis.circle"
+}
 
 struct SearchDetailView_Previews: PreviewProvider {
     static var previews: some View {

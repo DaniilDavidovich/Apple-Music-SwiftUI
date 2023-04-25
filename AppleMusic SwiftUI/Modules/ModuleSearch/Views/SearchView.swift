@@ -7,32 +7,35 @@
 
 import SwiftUI
 
+
 struct SearchView: View {
+    
+    // MARK: - Properties
     
     @State var flag = false
     @State var searchText = ""
+    
+    // MARK: - Body
     
     var body: some View {
         NavigationView {
             VStack {
                 if !flag {
-                    
                     SearchTextFieldView(text: $searchText)
-                        .onTapGesture {
-                            flag = true
-                        }
-                    
+                        .onTapGesture { flag = true }
                     SearchCategoriesView()
-                    
                 } else {
-                    
-                    SearchListView()
+                    SearchListView(flag: $flag)
                 }
             }
-            .navigationBarTitle("Search")
+            .navigationBarTitle(Constants.navTitle)
             .padding(.bottom, 70)
         }
     }
+}
+
+fileprivate enum Constants {
+    static let navTitle = "Search"
 }
 
 struct SearchView_Previews: PreviewProvider {

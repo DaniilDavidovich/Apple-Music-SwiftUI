@@ -8,12 +8,14 @@
 import SwiftUI
 
 
-
 struct MediaList: View {
     
-    @ObservedObject var modelViewModel = MediaViewModel()
+    // MARK: - Properties
     
+    @ObservedObject private var modelViewModel = MediaViewModel()
     @State private var isSelected: Bool = false
+    
+    // MARK: - Body
        
     var body: some View {
         List {
@@ -30,8 +32,7 @@ struct MediaList: View {
             .listRowSeparator(.hidden, edges: .all)
             .frame(height: 0, alignment: .trailing)
         }
-        
         .listStyle(.inset)
-        .background(Color.clear)
+        .background(Color.clear) 
     }
 }

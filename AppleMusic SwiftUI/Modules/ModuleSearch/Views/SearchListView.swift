@@ -7,15 +7,17 @@
 
 import SwiftUI
 
+
 struct SearchListView: View {
     
+    // MARK: - Properties
     
     @ObservedObject var dataViewModel = SearchDetailViewModel()
     @State private var selectedSide = 0
-    @State var text = ""
+    @State private var text = ""
+    @Binding var flag: Bool
     
     var filteredData: [SearchModel] {
-        
         let data = (
             dataViewModel.hitsAdditionalViewModel +
             dataViewModel.playlistAdditionalViewModel +
@@ -35,15 +37,16 @@ struct SearchListView: View {
         }
     }
     
+    // MARK: - Body
     
     var body: some View {
-        
         VStack {
             HStack {
                 SearchTextFieldView(text: $text)
-                Button("Cancel") {
+                
+                Button(Constants.cancel) {
                     withAnimation {
-//                        flag = false
+                        flag = false
                     }
                 }
                 .padding(.trailing, 20)
@@ -53,39 +56,42 @@ struct SearchListView: View {
             
             SearchPickerView(selectedSide: $selectedSide)
                 .padding(.horizontal, 20)
+            
             if selectedSide == 0 {
                 List(filteredData) { item in
-                        HStack {
-                            Image(item.image)
-                                .resizable()
-                                .frame(width: 60, height: 60)
-                                .cornerRadius(10)
-                                .scaledToFill()
-                                .padding(.horizontal, 0)
-                            VStack(alignment: .leading) {
-                                Text(item.description ?? "Error")
-                                    .bold()
-                                Text(item.title)
-                                    .foregroundColor(.gray)
-                            }
-                            .padding(.leading)
+                    HStack {
+                        Image(item.image)
+                            .resizable()
+                            .frame(width: 60, height: 60)
+                            .cornerRadius(10)
+                            .scaledToFill()
+                            .padding(.horizontal, 0)
+                        
+                        VStack(alignment: .leading) {
+                            Text(item.description ?? Constants.error)
+                                .bold()
+                            
+                            Text(item.title)
+                                .foregroundColor(.gray)
                         }
+                        .padding(.leading)
                     }
-                
+                }
                 .listStyle(.plain)
                 .padding(.bottom, 0)
             } else {
-                Text("Fatall Error Loading View")
+                Text(Constants.fatalError)
                     .padding(.top, 100)
                     .foregroundColor(.gray)
+                
                 Spacer()
             }
         }
     }
 }
 
-//struct SearchListView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        SearchListView()
-//    }
-//}
+fileprivate enum Constants {
+    static let error = "Error"
+    static let fatalError = "Fatal Error"
+    static let cancel = "Cancel"
+}

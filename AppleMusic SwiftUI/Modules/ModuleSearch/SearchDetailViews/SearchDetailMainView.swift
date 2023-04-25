@@ -7,7 +7,10 @@
 
 import SwiftUI
 
-struct MainView: View {
+
+struct SearchDetailMainView: View {
+    
+    // MARK: - Properties
     
     var data: SearchDetailViewModel
     
@@ -15,20 +18,20 @@ struct MainView: View {
         GridItem(.flexible())
     ]
     
+    // MARK: - Body
+    
     var body: some View {
         ScrollView(.horizontal, showsIndicators: false) {
             LazyHGrid(rows: rows, content: {
                 ForEach(data.mainViewModel) { data in
-                    
                     VStack(alignment: .leading) {
-                        
-                        Text("Featured Playlist")
+                        Text(Constants.textTitle)
                             .foregroundColor(.gray)
                             .font(.footnote)
                             .textCase(.uppercase)
                             .padding(.bottom, -7)
                         
-                        Text(data.description ?? "error")
+                        Text(data.description ?? Constants.error)
                             .font(.title2)
                         
                         Spacer()
@@ -49,12 +52,15 @@ struct MainView: View {
             .padding(20)
         }
     }
-    
-    
 }
 
-struct MainView_Previews: PreviewProvider {
+fileprivate enum Constants {
+    static let textTitle = "Featured Playlist"
+    static let error = "Error"
+}
+
+struct SearchDetailMainView_Previews: PreviewProvider {
     static var previews: some View {
-        MainView(data: SearchDetailViewModel())
+        SearchDetailMainView(data: SearchDetailViewModel())
     }
 }

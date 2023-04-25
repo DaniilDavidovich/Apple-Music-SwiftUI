@@ -6,6 +6,8 @@
 //
 
 import Foundation
+
+
 struct SearchModel: Identifiable {
     var id = UUID()
     var title: String

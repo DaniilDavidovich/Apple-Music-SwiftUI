@@ -7,30 +7,34 @@
 
 import SwiftUI
 
+
 struct DescriptionAndSliderView: View {
     
+    // MARK: - Properties
+    
     @State private var sliderValue = 0.0
-        
     @State private var range = 0...4.32
+    
+    // MARK: - Body
     
     var body: some View {
         VStack(alignment: .leading) {
             HStack {
                 
                 VStack(alignment: .leading) {
-                    Text("Anima")
+                    Text(Texts.title)
                         .bold()
-                    Text("The Limba")
+                    Text(Texts.description)
                         .foregroundColor(.gray)
                 }
-                
                 Spacer()
+                
                 Menu {
-                    Button("Share Music") {
+                    Button(Texts.share) {
                         //
                     }
                 } label: {
-                    Image(systemName: "ellipsis.circle")
+                    Image(systemName: Images.circle)
                         .font(.system(size: 27))
                 }
                 .padding(.top, 1)
@@ -49,6 +53,16 @@ struct DescriptionAndSliderView: View {
         }
         .padding(.horizontal, 20)
     }
+}
+
+fileprivate enum Images {
+    static let circle = "ellipsis.circle"
+}
+
+fileprivate enum Texts {
+    static let title = "Anima"
+    static let description = "The Limba"
+    static let share = "Share Music"
 }
 
 struct DescriptionAndSliderView_Previews: PreviewProvider {

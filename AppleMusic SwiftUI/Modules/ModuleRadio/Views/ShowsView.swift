@@ -7,21 +7,24 @@
 
 import SwiftUI
 
+
 struct ShowsView: View {
     
-    @ObservedObject var model = RadioViewModel()
+    // MARK: - Properties
+    
+    @ObservedObject private var model = RadioViewModel()
     
     let rows = [
         GridItem(.flexible())
     ]
     
+    // MARK: - Body
+    
     var body: some View {
         ScrollView(.horizontal, showsIndicators: false) {
             LazyHGrid(rows: rows, content: {
                 ForEach(model.dataShows) { dataModel in
-                    
                     VStack(alignment: .leading) {
-                        
                         Text(dataModel.header ?? "Error")
                             .foregroundColor(.gray)
                             .font(.footnote)
