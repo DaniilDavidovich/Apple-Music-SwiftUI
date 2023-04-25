@@ -10,7 +10,11 @@ import SwiftUI
 
 struct PlayerImageView: View {
     
+    // MARK: - Properties
+    
     var image: String?
+    
+    // MARK: - Body
     
     var body: some View {
         Image(image ?? "Music")
