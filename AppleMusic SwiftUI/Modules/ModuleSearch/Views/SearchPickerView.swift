@@ -16,7 +16,7 @@ struct SearchPickerView: View {
     let titleSide = [titlesSide.appleMusic, titlesSide.yourMediateka ]
     
     // MARK: - Body
-
+    
     var body: some View {
         VStack {
             Picker("", selection: $selectedSide) {
@@ -31,7 +31,7 @@ struct SearchPickerView: View {
 
 fileprivate enum titlesSide {
     static let appleMusic = "Apple Music"
-    static let yourMediateka = "Your Mediateka"
+    static let yourMediateka = "Your Media Library"
 }
 
 

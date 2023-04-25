@@ -16,7 +16,7 @@ struct MediaList: View {
     @State private var isSelected: Bool = false
     
     // MARK: - Body
-       
+    
     var body: some View {
         List {
             ForEach(modelViewModel.mediaModelArray) { mediaModel in

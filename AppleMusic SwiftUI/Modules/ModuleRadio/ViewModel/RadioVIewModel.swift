@@ -11,7 +11,7 @@ import Foundation
 class RadioViewModel: ObservableObject {
     
     // MARK: - Properties
-   
+    
     @Published var dataShows = [RadioModel]()
     @Published var dataStations = [RadioModel]()
     

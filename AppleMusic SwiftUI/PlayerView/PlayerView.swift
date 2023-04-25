@@ -66,8 +66,8 @@ struct PlayerView: View {
             .fullScreenCover(isPresented: $showModal) {
                 PlayerModalView()
             }
-            
         }
+        
         Divider()
             .padding(.top, -15.0)
     }

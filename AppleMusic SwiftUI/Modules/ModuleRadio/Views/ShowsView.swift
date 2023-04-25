@@ -35,11 +35,11 @@ struct ShowsView: View {
                         
                         Spacer()
                             .frame(height: 3)
-    
+                        
                         Text(dataModel.descrioption)
                             .foregroundColor(.gray)
                             .font(.title3)
-                            
+                        
                         Image(dataModel.image)
                             .resizable()
                             .scaledToFill()

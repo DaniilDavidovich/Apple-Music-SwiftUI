@@ -79,7 +79,7 @@ class SearchViewModel: ObservableObject {
                 title: "Special Audio",
                 image: "specialAudio-search"
             )
-            ]
+        ]
         categoriesModel.append(contentsOf: newData)
     }
 }

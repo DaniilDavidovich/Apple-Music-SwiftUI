@@ -29,7 +29,7 @@ struct SliderVolueAndOtherViews: View {
             HStack(spacing: 100) {
                 
                 Button {
-                    // Clear
+                    // Clear Action
                 } label: {
                     Image(systemName: Images.text)
                         .bold()
@@ -37,14 +37,14 @@ struct SliderVolueAndOtherViews: View {
                 }
                 
                 Button {
-                    // Clear
+                    // Clear Action
                 } label: {
                     Image(systemName: Images.heart)
                         .font(.system(size: 22))
                 }
                 
                 Button {
-                    // Clear
+                    // Clear Action
                 } label: {
                     Image(systemName: Images.shuffle)
                         .font(.system(size: 22))

@@ -20,10 +20,10 @@ struct MediaRow: View {
         VStack(alignment: .leading, spacing: -10) {
             HStack {
                 Image(systemName: model.isSelected ? Images.checkmarkFill : Images.circle)
-                .resizable()
-                .scaledToFit()
-                .foregroundColor(model.isSelected ? Color.red : Color.gray)
-                .frame(width: 22, height: 22)
+                    .resizable()
+                    .scaledToFit()
+                    .foregroundColor(model.isSelected ? Color.red : Color.gray)
+                    .frame(width: 22, height: 22)
                 
                 Image(systemName: model.icon)
                     .resizable()
