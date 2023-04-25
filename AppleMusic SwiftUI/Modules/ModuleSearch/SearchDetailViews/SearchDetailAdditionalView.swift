@@ -40,7 +40,7 @@ struct SearchDetailAdditionalView: View {
                             .font(.title2)
                             .bold()
                             .padding(.leading, 20)
-                            .foregroundColor(.black)
+                            .foregroundColor(Color(UIColor.label))
                         
                         Image(systemName: Images.control)
                             .rotationEffect(.init(degrees: 90))
@@ -76,11 +76,11 @@ struct SearchDetailAdditionalView: View {
                     // Clear Action
                 } label: {
                     HStack {
-                        Text(Titles.playlists)
+                        Text(Titles.alboms)
                             .font(.title2)
                             .bold()
                             .padding(.leading, 20)
-                            .foregroundColor(.black)
+                            .foregroundColor(Color(UIColor.label))
                         
                         Image(systemName: Images.control)
                             .rotationEffect(.init(degrees: 90))
@@ -118,11 +118,11 @@ struct SearchDetailAdditionalView: View {
                     // Clear Action
                 } label: {
                     HStack {
-                        Text(Titles.playlists)
+                        Text(Titles.hits)
                             .font(.title2)
                             .bold()
                             .padding(.leading, 20)
-                            .foregroundColor(.black)
+                            .foregroundColor(Color(UIColor.label))
                         
                         Image(systemName: Images.control)
                             .rotationEffect(.init(degrees: 90))
