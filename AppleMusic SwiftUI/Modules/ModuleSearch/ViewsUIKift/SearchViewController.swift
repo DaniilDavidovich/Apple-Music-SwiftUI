@@ -18,7 +18,7 @@ class SearchViewController: UIViewController {
     private lazy var collectionView: UICollectionView = {
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: createLayout())
         collectionView.register(SearchCollectionViewCell.self, forCellWithReuseIdentifier: SearchCollectionViewCell.identifier)
-        
+        collectionView.register(HeaderSearchView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: HeaderSearchView.identifier)
         collectionView.dataSource = self
         collectionView.delegate = self
         collectionView.translatesAutoresizingMaskIntoConstraints = false
@@ -29,18 +29,12 @@ class SearchViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupView()
         setupHierarchy()
         setupLayout()
     }
     
-    // MARK: - Setups
-    func setupView() {
-        title = "Search"
-        navigationController?.navigationBar.prefersLargeTitles = true
-    }
-    
     // MARK: - Hierarchy
+    
     func setupHierarchy() {
         view.addSubview(collectionView)
     }
@@ -52,7 +46,7 @@ class SearchViewController: UIViewController {
             collectionView.topAnchor.constraint(equalTo: view.topAnchor),
             collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -80)
+            collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -73)
         ])
     }
     
@@ -107,16 +101,16 @@ class SearchViewController: UIViewController {
     }
 }
 
-extension SearchViewController: UICollectionViewDataSource {
+extension SearchViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         viewModel.categoriesModel.count
     }
-        
+    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-
+        
         if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: SearchCollectionViewCell.identifier, for: indexPath) as? SearchCollectionViewCell {
-
+            
             cell.image.image = UIImage(named: viewModel.categoriesModel[indexPath.row].image)
             cell.titleLabel.text = viewModel.categoriesModel[indexPath.row].title
             return cell
@@ -131,8 +125,10 @@ extension SearchViewController: UICollectionViewDataSource {
     }
     
     
-}
-
-extension SearchViewController: UICollectionViewDelegate {
-    
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        
+        let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: HeaderSearchView.identifier, for: indexPath) as! HeaderSearchView
+      
+        return header
+    }
 }

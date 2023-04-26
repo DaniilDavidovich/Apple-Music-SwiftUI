@@ -35,6 +35,7 @@
 		A5A2F49429F9711000C08037 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A2F49329F9711000C08037 /* SearchViewController.swift */; };
 		A5A2F49629F9794D00C08037 /* SearchCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A2F49529F9794D00C08037 /* SearchCollectionViewCell.swift */; };
 		A5A2F49829F9835700C08037 /* SearchViewRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A2F49729F9835700C08037 /* SearchViewRepresentable.swift */; };
+		A5A2F49A29F9A32D00C08037 /* SearchHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A2F49929F9A32D00C08037 /* SearchHeaderView.swift */; };
 		A5CA1B3029F1B42500EE249B /* PlayerImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5CA1B2F29F1B42500EE249B /* PlayerImageView.swift */; };
 		A5CA1B3229F1B4E400EE249B /* DescriptionAndSliderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5CA1B3129F1B4E400EE249B /* DescriptionAndSliderView.swift */; };
 		A5CA1B3429F1BA2600EE249B /* PlayerButtonsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5CA1B3329F1BA2600EE249B /* PlayerButtonsView.swift */; };
@@ -76,6 +77,7 @@
 		A5A2F49329F9711000C08037 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		A5A2F49529F9794D00C08037 /* SearchCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCollectionViewCell.swift; sourceTree = "<group>"; };
 		A5A2F49729F9835700C08037 /* SearchViewRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewRepresentable.swift; sourceTree = "<group>"; };
+		A5A2F49929F9A32D00C08037 /* SearchHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchHeaderView.swift; sourceTree = "<group>"; };
 		A5CA1B2F29F1B42500EE249B /* PlayerImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerImageView.swift; sourceTree = "<group>"; };
 		A5CA1B3129F1B4E400EE249B /* DescriptionAndSliderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescriptionAndSliderView.swift; sourceTree = "<group>"; };
 		A5CA1B3329F1BA2600EE249B /* PlayerButtonsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerButtonsView.swift; sourceTree = "<group>"; };
@@ -285,6 +287,7 @@
 				A5A2F49329F9711000C08037 /* SearchViewController.swift */,
 				A5A2F49529F9794D00C08037 /* SearchCollectionViewCell.swift */,
 				A5A2F49729F9835700C08037 /* SearchViewRepresentable.swift */,
+				A5A2F49929F9A32D00C08037 /* SearchHeaderView.swift */,
 			);
 			path = ViewsUIKift;
 			sourceTree = "<group>";
@@ -423,6 +426,7 @@
 				A55E513A29E46649004D275E /* MediaTitle.swift in Sources */,
 				A54B850E29F5FC1B0031EACE /* SearchPickerView.swift in Sources */,
 				A55E512A29E45A1B004D275E /* AppleMusicSwiftUI.swift in Sources */,
+				A5A2F49A29F9A32D00C08037 /* SearchHeaderView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

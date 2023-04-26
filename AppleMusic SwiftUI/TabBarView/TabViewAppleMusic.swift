@@ -27,7 +27,9 @@ struct TabViewAppleMusic: View {
                 
                 NavigationView {
                     SearchViewRepresentable()
+                        .navigationBarTitle("Search")
                 }
+                
                 .tabItem {
                     Text(Constants.titleSearch)
                     Image(systemName: Images.iconSearch)
