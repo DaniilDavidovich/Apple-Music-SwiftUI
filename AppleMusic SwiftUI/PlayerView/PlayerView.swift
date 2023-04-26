@@ -12,7 +12,7 @@ struct PlayerView: View {
     
     // MARK: - Properties
     
-    @State var playerData = SearchModel(
+    var playerData = SearchModel(
         title: Song.title,
         description: Song.description,
         image: Song.image)

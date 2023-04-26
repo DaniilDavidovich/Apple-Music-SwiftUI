@@ -63,8 +63,3 @@ fileprivate enum Constants {
     static let error = "Error"
 }
 
-//struct DescriptionAndSliderView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        DescriptionAndSliderView(title: "1", description: "2")
-//    }
-//}
