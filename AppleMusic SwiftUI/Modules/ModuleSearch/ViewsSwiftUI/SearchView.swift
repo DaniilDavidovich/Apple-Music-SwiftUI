@@ -22,7 +22,11 @@ struct SearchView: View {
             VStack {
                 if !flag {
                     SearchTextFieldView(text: $searchText)
-                        .onTapGesture { flag = true }
+                        .onTapGesture {
+                            flag = true
+                            
+                        }
+                    
                     SearchCategoriesView()
                 } else {
                     SearchListView(flag: $flag)

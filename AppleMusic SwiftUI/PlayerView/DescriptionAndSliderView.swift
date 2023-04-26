@@ -22,10 +22,10 @@ struct DescriptionAndSliderView: View {
     var body: some View {
         VStack(alignment: .leading) {
             HStack {
-                
                 VStack(alignment: .leading) {
                     Text(title ?? Constants.error)
                         .bold()
+                    
                     Text(description ?? Constants.error)
                         .foregroundColor(.gray)
                 }

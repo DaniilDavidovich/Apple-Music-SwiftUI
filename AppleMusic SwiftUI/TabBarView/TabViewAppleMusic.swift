@@ -25,11 +25,14 @@ struct TabViewAppleMusic: View {
                         Image(systemName: Images.iconRadio)
                     }
                 
-                SearchView()
-                    .tabItem {
-                        Text(Constants.titleSearch)
-                        Image(systemName: Images.iconSearch)
-                    }
+                NavigationView {
+                    SearchViewRepresentable()
+                }
+                .tabItem {
+                    Text(Constants.titleSearch)
+                    Image(systemName: Images.iconSearch)
+                }
+               
             }
             .accentColor(.red)
             .onAppear() {
