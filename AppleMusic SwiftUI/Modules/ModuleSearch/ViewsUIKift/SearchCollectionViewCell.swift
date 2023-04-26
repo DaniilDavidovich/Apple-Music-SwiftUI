@@ -12,7 +12,7 @@ final class SearchCollectionViewCell: UICollectionViewCell {
         
     // MARK: - Properties
     
-    static let identifier = "SeachCell"
+    static let identifier = "SearchCollectionCell"
     
     lazy var image: UIImageView = {
         let image = UIImageView()

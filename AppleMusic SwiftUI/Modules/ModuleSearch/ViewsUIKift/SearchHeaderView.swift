@@ -10,13 +10,13 @@ import UIKit
 
 final class HeaderSearchView: UICollectionReusableView {
 
-    static let identifier = "header"
+    static let identifier = Constansts.indentifier
 
     // MARK: - Outlets
 
     private lazy var label: UILabel = {
         let label = UILabel()
-        label.text = "Search on categories"
+        label.text = Constansts.textLabel
         label.font = .systemFont(ofSize: 22, weight: .bold)
         label.textColor = .label
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -47,4 +47,9 @@ final class HeaderSearchView: UICollectionReusableView {
             label.centerYAnchor.constraint(equalTo: self.centerYAnchor)
         ])
     }
+}
+
+fileprivate enum Constansts {
+    static let indentifier = "HeaderSearchView"
+    static let textLabel = "Search on categories"
 }
