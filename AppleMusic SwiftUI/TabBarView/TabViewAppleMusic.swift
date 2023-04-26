@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import UIKit
 
 
 struct TabViewAppleMusic: View {
@@ -25,11 +26,20 @@ struct TabViewAppleMusic: View {
                         Image(systemName: Images.iconRadio)
                     }
                 
+                NavigationView {
+                    SearchViewRepresentable()
+                }
+                .tabItem {
+                    Text(Constants.titleSearchUIKit)
+                    Image(systemName: Images.iconSearch)
+                }
+                
                 SearchView()
                     .tabItem {
-                        Text(Constants.titleSearch)
+                        Text(Constants.titleSearchSwiftUI)
                         Image(systemName: Images.iconSearch)
                     }
+               
             }
             .accentColor(.red)
             .onAppear() {
@@ -51,7 +61,8 @@ struct TabViewAppleMusic_Previews: PreviewProvider {
 fileprivate enum Constants {
     static let titleMedia = "Media Library"
     static let titleRadio = "Radio"
-    static let titleSearch = "Search"
+    static let titleSearchSwiftUI = "Search SwiftUI"
+    static let titleSearchUIKit = "Search UIKit"
 }
 
 fileprivate enum Images {

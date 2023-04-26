@@ -20,14 +20,15 @@ struct SliderVolueAndOtherViews: View {
         VStack {
             HStack(spacing: 20) {
                 Image(systemName: Images.speaker)
+                
                 Slider(value: $value)
                     .accentColor(.red)
+                
                 Image(systemName: Images.speakerWave)
             }
             .foregroundColor(.gray)
             
             HStack(spacing: 100) {
-                
                 Button {
                     // Clear Action
                 } label: {
