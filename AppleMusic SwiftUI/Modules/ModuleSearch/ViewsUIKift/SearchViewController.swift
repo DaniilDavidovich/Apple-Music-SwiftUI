@@ -9,11 +9,21 @@ import Foundation
 import UIKit
 import SwiftUI
 
+
 class SearchViewController: UIViewController {
     
     //MARK: - Properties
     
     var viewModel = SearchViewModel()
+    var isList: Bool = false
+    
+    private lazy var navigationTitle: UILabel = {
+        let label = UILabel()
+        label.text = "Search"
+        label.font = .systemFont(ofSize: 34, weight: .bold)
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
     
     private lazy var collectionView: UICollectionView = {
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: createLayout())
@@ -21,8 +31,24 @@ class SearchViewController: UIViewController {
         collectionView.register(HeaderSearchView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: HeaderSearchView.identifier)
         collectionView.dataSource = self
         collectionView.delegate = self
+        collectionView.showsVerticalScrollIndicator = false
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         return collectionView
+    }()
+    
+    private lazy var textField: UITextField = {
+        let textField = UITextField()
+        textField.attributedPlaceholder = NSAttributedString(string: "Artists, songs, texts and more...", attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray])
+        textField.textAlignment = .left
+        textField.leftView = UIView(frame: CGRect(x: 0,
+                                                  y: 0,
+                                                  width: 10,
+                                                  height: textField.frame.height))
+        textField.leftViewMode = .always
+        textField.translatesAutoresizingMaskIntoConstraints = false
+        textField.backgroundColor = .systemGray5
+        textField.layer.cornerRadius = 12
+        return textField
     }()
     
     // MARK: - Lyfecycle
@@ -36,14 +62,26 @@ class SearchViewController: UIViewController {
     // MARK: - Hierarchy
     
     func setupHierarchy() {
+        guard let image = UIImage(systemName: "magnifyingglass") else { return }
+        textField.setLeftIcon(image)
+        view.addSubview(navigationTitle)
         view.addSubview(collectionView)
+        view.addSubview(textField)
     }
     
     // MARK: - Layout
     
     func setupLayout() {
         NSLayoutConstraint.activate([
-            collectionView.topAnchor.constraint(equalTo: view.topAnchor),
+            navigationTitle.topAnchor.constraint(equalTo: view.topAnchor, constant: 40),
+            navigationTitle.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
+          
+            textField.topAnchor.constraint(equalTo: navigationTitle.bottomAnchor, constant: 10),
+            textField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
+            textField.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
+            textField.heightAnchor.constraint(equalToConstant: 40),
+            
+            collectionView.topAnchor.constraint(equalTo: textField.bottomAnchor, constant: 10),
             collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -73)
@@ -56,18 +94,18 @@ class SearchViewController: UIViewController {
                 widthDimension: .fractionalWidth(1.0),
                 heightDimension: .absolute(30)
             )
-
+            
             let sectionHeader = NSCollectionLayoutBoundarySupplementaryItem(
                 layoutSize: headerSize,
                 elementKind: UICollectionView.elementKindSectionHeader,
                 alignment: .top
             )
-
+            
             let itemSize = NSCollectionLayoutSize(
                 widthDimension: .fractionalWidth(1.0),
                 heightDimension: .absolute(130)
             )
-
+            
             let item = NSCollectionLayoutItem(layoutSize: itemSize)
             item.contentInsets = NSDirectionalEdgeInsets(
                 top: 10,
@@ -75,18 +113,18 @@ class SearchViewController: UIViewController {
                 bottom: 0,
                 trailing: 0
             )
-
+            
             let groupSize = NSCollectionLayoutSize(
                 widthDimension: .fractionalWidth(1.0),
                 heightDimension: .absolute(130)
             )
-
+            
             let group = NSCollectionLayoutGroup.horizontal(
                 layoutSize: groupSize,
                 subitem: item,
                 count: 2
             )
-
+            
             let section = NSCollectionLayoutSection(group: group)
             section.contentInsets = NSDirectionalEdgeInsets(
                 top: 0,
@@ -94,14 +132,14 @@ class SearchViewController: UIViewController {
                 bottom: 0,
                 trailing: 20
             )
-
+            
             section.boundarySupplementaryItems = [sectionHeader]
             return section
         }
     }
 }
 
-extension SearchViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
+extension SearchViewController: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         viewModel.categoriesModel.count
@@ -110,25 +148,23 @@ extension SearchViewController: UICollectionViewDataSource, UICollectionViewDele
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: SearchCollectionViewCell.identifier, for: indexPath) as? SearchCollectionViewCell {
-            
             cell.image.image = UIImage(named: viewModel.categoriesModel[indexPath.row].image)
             cell.titleLabel.text = viewModel.categoriesModel[indexPath.row].title
             return cell
         }
+       
         return UICollectionViewCell()
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let mySwiftUIView = SearchDetailView() 
-        let hostingController = UIHostingController(rootView: mySwiftUIView)
-        navigationController?.pushViewController(hostingController, animated: true)
+        let swiftUIView = SearchDetailView()
+        let hostingController = UIHostingController(rootView: swiftUIView)
+        self.navigationController?.pushViewController(hostingController, animated: true)
     }
     
     
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-        
         let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: HeaderSearchView.identifier, for: indexPath) as! HeaderSearchView
-      
         return header
     }
 }

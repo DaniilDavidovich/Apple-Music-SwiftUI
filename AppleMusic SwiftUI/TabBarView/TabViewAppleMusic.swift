@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import UIKit
 
 
 struct TabViewAppleMusic: View {
@@ -27,7 +28,6 @@ struct TabViewAppleMusic: View {
                 
                 NavigationView {
                     SearchViewRepresentable()
-                        .navigationBarTitle("Search")
                 }
                 
                 .tabItem {
