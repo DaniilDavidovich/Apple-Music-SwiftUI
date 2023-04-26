@@ -1,6 +1,6 @@
 //
-//  TabView.swift
-//  Home Work 23
+//  TabViewAppleMusic.swift
+//  AppleMusic SwiftUI
 //
 //  Created by Daniil Davidovich on 10.04.23.
 //

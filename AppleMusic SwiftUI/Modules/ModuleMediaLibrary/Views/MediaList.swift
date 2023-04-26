@@ -1,6 +1,6 @@
 //
-//  ListView.swift
-//  Home Work 23
+//  MediaList.swift
+//  AppleMusic SwiftUI
 //
 //  Created by Daniil Davidovich on 10.04.23.
 //

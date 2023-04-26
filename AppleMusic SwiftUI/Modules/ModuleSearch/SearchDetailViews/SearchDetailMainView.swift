@@ -1,5 +1,5 @@
 //
-//  HFeaturedPlaylistView.swift
+//  SearchDetailMainView.swift
 //  AppleMusic SwiftUI
 //
 //  Created by Daniil Davidovich on 20.04.23.

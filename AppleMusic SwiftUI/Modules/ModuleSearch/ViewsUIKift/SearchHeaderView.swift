@@ -8,7 +8,7 @@
 import UIKit
 
 
-final class HeaderSearchView: UICollectionReusableView {
+final class SearchHeaderView: UICollectionReusableView {
 
     static let identifier = Constansts.indentifier
 

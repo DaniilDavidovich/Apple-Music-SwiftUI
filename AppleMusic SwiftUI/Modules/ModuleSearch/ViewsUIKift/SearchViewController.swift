@@ -1,5 +1,5 @@
 //
-//  SearchCategoriesController.swift
+//  SearchViewController.swift
 //  AppleMusic SwiftUI
 //
 //  Created by Daniil Davidovich on 26.04.23.
@@ -34,7 +34,7 @@ class SearchViewController: UIViewController {
         return collectionView
     }()
     
-    private var textField: UITextField {
+    private var textField: UITextField = {
         let textField = UITextField()
         
         if let image = UIImage(systemName: Constants.imageTextField) {
@@ -49,7 +49,7 @@ class SearchViewController: UIViewController {
         textField.layer.cornerRadius = 12
         textField.tintColor = .systemGray
         return textField
-    }
+    }()
     
     // MARK: - Lyfecycle
     

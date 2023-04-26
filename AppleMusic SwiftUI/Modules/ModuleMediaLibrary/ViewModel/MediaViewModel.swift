@@ -1,6 +1,6 @@
 //
 //  MediaViewModel.swift
-//  Home Work 23
+//  AppleMusic SwiftUI
 //
 //  Created by Daniil Davidovich on 12.04.23.
 //

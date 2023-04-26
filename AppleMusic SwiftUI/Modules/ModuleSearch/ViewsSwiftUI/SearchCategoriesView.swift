@@ -1,5 +1,5 @@
 //
-//  CategoriesView.swift
+//  SearchCategoriesView.swift
 //  AppleMusic SwiftUI
 //
 //  Created by Daniil Davidovich on 18.04.23.

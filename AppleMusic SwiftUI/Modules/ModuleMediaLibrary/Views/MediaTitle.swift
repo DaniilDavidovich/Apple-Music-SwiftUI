@@ -1,6 +1,6 @@
 //
-//  Desscription Media Library.swift
-//  Home Work 23
+//  MediaTitle.swift
+//  AppleMusic SwiftUI
 //
 //  Created by Daniil Davidovich on 10.04.23.
 //

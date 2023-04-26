@@ -1,5 +1,5 @@
 //
-//  ShowsView.swift
+//  RadioShowsView.swift
 //  AppleMusic SwiftUI
 //
 //  Created by Daniil Davidovich on 17.04.23.
@@ -8,7 +8,7 @@
 import SwiftUI
 
 
-struct ShowsView: View {
+struct RadioShowsView: View {
     
     // MARK: - Properties
     
@@ -55,6 +55,6 @@ struct ShowsView: View {
 
 struct ShowsView_Previews: PreviewProvider {
     static var previews: some View {
-        ShowsView()
+        RadioShowsView()
     }
 }
