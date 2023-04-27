@@ -17,7 +17,7 @@ struct RadioView: View {
                     Divider()
                         .padding(.horizontal, 20)
                     
-                    ShowsView()
+                    RadioShowsView()
                     
                     Divider()
                         .padding(.horizontal, 20)
@@ -27,7 +27,7 @@ struct RadioView: View {
                         .fontWeight(.bold)
                         .padding(.leading, 20)
                     
-                    StationsView()
+                    RadioStationsView()
                 }
                 .padding(.bottom, 80)
             }
